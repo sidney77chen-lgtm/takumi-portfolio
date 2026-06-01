@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>品牌識別：美學直覺 | TAKUMI</title>
+<meta name="description" content="A brand identity case study exploring the role of aesthetic intuition in design decision-making. By Sidney Chen."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="品牌識別：美學直覺 | TAKUMI"/>
+<meta property="og:description" content="A brand identity case study exploring the role of aesthetic intuition in design decision-making. By Sidney Chen."/>
+<meta property="og:url" content="https://sidney77chen-lgtm.github.io/brand_identity_1.html"/>
+<link rel="stylesheet" href="token-override.css"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-sm": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Libre Caslon Text"], "headline-display": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+    body { background-color: #f8faf8; }
+    .mist-overlay {
+        background-image: radial-gradient(circle at 2px 2px, rgba(24, 35, 25, 0.05) 1px, transparent 0);
+        background-size: 40px 40px;
+    }
+    .reveal-up { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal-up.active { opacity: 1; transform: translateY(0); }
+    .scroll-indicator { height: 2px; background: #182319; transform-origin: left; transform: scaleX(0); }
+    #works-dropdown { transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; }
+</style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+  <a class="font-headline-sm text-headline-sm tracking-widest text-primary" href="index.html">TAKUMI</a>
+  <div class="hidden md:flex items-center gap-10">
+    <!-- Works Dropdown -->
+    <div class="relative" id="works-nav">
+      <button class="font-label-md text-label-md text-primary border-b border-primary/20 pb-1 flex items-center gap-1 focus:outline-none" id="works-btn">
+        精選作品<span class="material-symbols-outlined transition-transform duration-200" id="works-chevron" style="font-size:16px;">expand_more</span>
+      </button>
+      <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
+        <div class="p-3 space-y-1">
+          <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
+            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+          </a>
+          <div class="h-px bg-outline-variant/40 mx-4"></div>
+          <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg bg-surface-container transition-colors group">
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
+            <span class="font-body-md text-body-md text-primary transition-colors">品牌識別：美學直覺</span>
+          </a>
+          <div class="h-px bg-outline-variant/40 mx-4"></div>
+          <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
+            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：精煉與演進</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="methodology.html">設計方法論</a>
+    <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">關於</a>
+    <a class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-primary-container transition-colors duration-300" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
+  </div>
+  <button class="md:hidden text-primary" id="mobile-menu-btn">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+</div>
+<div class="scroll-indicator w-full" id="progress"></div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
+  <div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
+    <div class="font-label-md text-label-md text-primary border-b border-primary/20 pb-2">精選作品</div>
+    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
+    <a class="block font-label-sm text-label-sm text-primary py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
+    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
+    <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="methodology.html">設計方法論</a>
+    <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於</a>
+    <a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
+  </div>
+</div>
+</nav>
+
+<main class="mist-overlay pt-32">
+<!-- Hero -->
+<header class="px-margin-desktop max-w-container-max mx-auto py-section-gap flex flex-col md:flex-row gap-gutter items-end">
+  <div class="md:w-2/3">
+    <span class="font-label-md text-label-md text-secondary mb-4 block tracking-widest">個案研究 NO. 02</span>
+    <h1 class="font-headline-display text-headline-display text-primary max-w-4xl leading-tight">品牌識別：<br/><span>美學直覺</span></h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mt-8 max-w-2xl">
+      為精品室內設計工作室打造的品牌識別系統。核心挑戰是將創辦人深刻的直覺審美，轉譯為可溝通、可延展的視覺語言。
+    </p>
+  </div>
+  <div class="md:w-1/3 flex flex-col gap-2 border-l border-outline-variant pl-8 py-4">
+    <span class="font-label-sm text-label-sm text-on-surface-variant">核心：策略品牌設計</span>
+    <span class="font-label-sm text-label-sm text-on-surface-variant">客戶：精品工作室（保密）</span>
+    <span class="font-label-sm text-label-sm text-on-surface-variant">年份：2023</span>
+  </div>
+</header>
+
+<!-- Hero Image -->
+<section class="w-full px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+  <div class="aspect-[21/9] w-full bg-surface-container-high overflow-hidden rounded-lg shadow-sm">
+    <img class="w-full h-full object-cover opacity-90 contrast-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5fzOA1x9yuqj5Ck9onMHdQ801qxDATt9FLpzVrUUovYeDvfsmqoW_BfnDy0XTG7bL0SIV4jsA7NUsvquzRS7YEDvcX4bZxpyClpKfUeWvnAhJtGXme-Td_ewSvjncIQjLPGyxIWCEgqNEXcXP16ZMVDIkx-PqfuCLDeV_PvAk63AWM4N-kxyAWVsI0EP7ORoavsQM26Fo2evaMrwcVkoD1vwv451sh5W3fBSJv72Rl1it-91DeYbE2XRbaOTRhQtIBYQqGYyAiwQ" alt="Brand Identity Organic Materials"/>
+  </div>
+</section>
+
+<!-- Problem -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter">
+  <div class="md:col-span-5 reveal-up">
+    <h2 class="font-headline-md text-headline-md text-primary">直覺的無形邊界。</h2>
+  </div>
+  <div class="md:col-span-7 reveal-up">
+    <div class="space-y-6">
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        創辦人擁有極強的審美嗅覺，卻無法將「我想要那種感覺」轉化為供應商、客戶和設計師都能理解的共通語言。品牌在每次新項目中都呈現不同的樣貌，缺乏可識別的核心印記。
+      </p>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        挑戰在於「捕捉直覺而不扼殺它」。過度系統化會破壞品牌的靈魂；缺乏系統則讓品牌永遠停留在個人喜好的層次，無法進行專業溝通。
+      </p>
+    </div>
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-primary-container p-12 flex flex-col justify-between aspect-square rounded-xl">
+        <span class="font-label-sm text-label-sm text-on-primary-container">直覺難以言說</span>
+        <p class="font-headline-sm text-headline-sm text-on-primary-container/60 leading-snug">「就是那種感覺……但我說不清楚。」</p>
+      </div>
+      <div class="bg-surface-container-highest p-12 flex flex-col justify-between aspect-square border border-outline-variant/30 rounded-xl">
+        <span class="font-label-sm text-label-sm text-secondary">系統使直覺可溝通</span>
+        <div class="flex items-center justify-center">
+          <div class="w-20 h-20 rounded-full border-2 border-primary/30 flex items-center justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strategy -->
+<section class="bg-surface-container-low py-section-gap mb-section-gap">
+  <div class="px-margin-desktop max-w-container-max mx-auto">
+    <div class="max-w-3xl mb-16 reveal-up">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-8">語義定位策略。</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        我們透過三個維度來定位品牌的獨特性：<span class="text-primary font-medium">歷史參照</span>、<span class="text-primary font-medium">材質語彙</span>與<span class="text-primary font-medium">情感張力</span>。並非尋找「風格」，而是尋找品牌的「世界觀」。
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter reveal-up">
+      <div class="group cursor-default">
+        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">01. 原型考掘</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">蒐集品牌在歷史、藝術與自然界中的「精神前輩」，建立視覺參照系。從侘寂美學到布魯諾·塔特的玻璃建築。</p>
+      </div>
+      <div class="group cursor-default">
+        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">02. 語義地圖</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">將模糊形容詞轉化為可操作的設計決策。「溫暖但不甜膩」→ 特定色溫範圍；「精緻但有機」→ 字重與曲率組合。</p>
+      </div>
+      <div class="group cursor-default">
+        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">03. 視覺方向確認</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">三條視覺方向路徑的非語言簡報。讓創辦人以「感受」而非「判斷」做出選擇，保留直覺的原始狀態。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Execution -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+    <div class="order-2 md:order-1 reveal-up">
+      <!-- Abstract brand system visualization -->
+      <div class="bg-surface-container rounded-xl overflow-hidden p-12 space-y-8">
+        <!-- Color palette strip -->
+        <div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mb-3 block uppercase tracking-wider">色彩系統</span>
+          <div class="flex gap-2 h-12">
+            <div class="flex-1 bg-primary rounded-lg"></div>
+            <div class="flex-1 bg-secondary rounded-lg"></div>
+            <div class="flex-1 rounded-lg" style="background:#e8ddd0;"></div>
+            <div class="flex-1 rounded-lg" style="background:#f5f0eb;"></div>
+            <div class="flex-1 bg-surface-container-highest rounded-lg"></div>
+          </div>
+        </div>
+        <!-- Typography scale -->
+        <div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mb-3 block uppercase tracking-wider">字型層級</span>
+          <div class="space-y-2">
+            <div class="font-headline-sm text-headline-sm text-primary">Aa — Libre Caslon Text</div>
+            <div class="font-body-lg text-body-lg text-on-surface-variant">Aa — Hanken Grotesk</div>
+            <div class="font-label-md text-label-md text-secondary uppercase tracking-widest">LABEL — SPACING</div>
+          </div>
+        </div>
+        <!-- Logo mark placeholder -->
+        <div>
+          <span class="font-label-sm text-label-sm text-on-surface-variant mb-3 block uppercase tracking-wider">識別標誌</span>
+          <div class="h-16 bg-surface-container-high rounded-lg flex items-center justify-center border border-outline-variant/30">
+            <span class="font-headline-sm text-headline-sm text-primary tracking-[0.3em]">STUDIO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-1 md:order-2 space-y-8 reveal-up">
+      <span class="font-label-md text-label-md text-secondary tracking-widest">執行細節</span>
+      <h2 class="font-headline-md text-headline-md text-primary">系統的誕生。</h2>
+      <p class="font-body-lg text-body-lg text-on-surface-variant">
+        確認方向後，我們建立了一套完整的品牌語言系統——不只是規範手冊，而是一個「感知過濾器」，讓品牌在未來所有決策中都能保持靈魂的一致性。
+      </p>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+          <span class="font-body-md text-body-md">主視覺識別：字標設計與符號標誌的兩套應用系統。</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+          <span class="font-body-md text-body-md">攝影風格指南：光線、材質與構圖的定義框架。</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
+          <span class="font-body-md text-body-md">文案語調手冊：從提案郵件到 Instagram 說明的書寫準則。</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Final Vision -->
+<section class="w-full h-[560px] relative flex items-center overflow-hidden mb-section-gap">
+  <img class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] grayscale-[0.2]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5fzOA1x9yuqj5Ck9onMHdQ801qxDATt9FLpzVrUUovYeDvfsmqoW_BfnDy0XTG7bL0SIV4jsA7NUsvquzRS7YEDvcX4bZxpyClpKfUeWvnAhJtGXme-Td_ewSvjncIQjLPGyxIWCEgqNEXcXP16ZMVDIkx-PqfuCLDeV_PvAk63AWM4N-kxyAWVsI0EP7ORoavsQM26Fo2evaMrwcVkoD1vwv451sh5W3fBSJv72Rl1it-91DeYbE2XRbaOTRhQtIBYQqGYyAiwQ" alt="Final brand vision"/>
+  <div class="relative px-margin-desktop max-w-container-max mx-auto w-full">
+    <div class="max-w-2xl reveal-up">
+      <h2 class="font-headline-lg text-headline-lg text-background leading-tight">最終成果：直覺的形狀。</h2>
+      <p class="font-body-lg text-body-lg text-primary-fixed mt-8">
+        品牌系統交付後六個月，工作室首次接到了主動詢問的潛在客戶，對方表示：「在網路上看到你們的形象，感覺就是我一直在尋找的合作夥伴。」直覺，終於有了可以被看見的形狀。
+      </p>
+      <div class="mt-12 flex gap-12">
+        <div>
+          <div class="font-label-sm text-label-sm text-primary-fixed/60 mb-2 uppercase tracking-widest">項目週期</div>
+          <div class="font-headline-sm text-headline-sm text-background">10 週</div>
+        </div>
+        <div>
+          <div class="font-label-sm text-label-sm text-primary-fixed/60 mb-2 uppercase tracking-widest">品牌觸點覆蓋</div>
+          <div class="font-headline-sm text-headline-sm text-background">12 項</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-margin-desktop pb-section-gap">
+<div class="bg-surface-container-highest p-16 rounded-xl text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。
+</p>
+<a class="inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。">
+開始對話
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Next Project Navigation -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+  <div class="flex flex-col md:flex-row justify-between items-center gap-8 py-12 border-t border-outline-variant/40">
+    <a href="selected_works.html" class="group flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors">
+      <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+      <div>
+        <div class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">上一個案例</div>
+        <div class="font-body-md text-body-md">CMS 架構：行為與互動層級</div>
+      </div>
+    </a>
+    <a href="brand_identity_2.html" class="group flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors text-right">
+      <div>
+        <div class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">下一個案例</div>
+        <div class="font-body-md text-body-md">品牌識別：精煉與演進</div>
+      </div>
+      <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+    </a>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest pt-section-gap pb-12">
+<div class="max-w-container-max mx-auto px-margin-desktop border-t-[0.5px] border-outline-variant pt-12">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="space-y-4">
+<a class="font-headline-sm text-headline-sm text-primary tracking-widest block" href="index.html">TAKUMI</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">植根於意圖的設計夥伴關係。</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2025 工藝夥伴。保留一切權利。</p>
+</div>
+<div class="flex flex-wrap gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Connect</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+    // Scroll indicator + reveal
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progress').style.transform = `scaleX(${winScroll / height})`;
+        document.querySelectorAll('.reveal-up').forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+        });
+    });
+    window.dispatchEvent(new Event('scroll'));
+
+    // Works dropdown
+    const worksBtn = document.getElementById('works-btn');
+    const worksDropdown = document.getElementById('works-dropdown');
+    const worksChevron = document.getElementById('works-chevron');
+    if (worksBtn && worksDropdown) {
+        worksBtn.addEventListener('click', e => {
+            e.stopPropagation();
+            const isOpen = !worksDropdown.classList.contains('invisible');
+            worksDropdown.classList.toggle('opacity-0', isOpen);
+            worksDropdown.classList.toggle('invisible', isOpen);
+            worksDropdown.classList.toggle('-translate-y-2', isOpen);
+            worksChevron && worksChevron.classList.toggle('rotate-180', !isOpen);
+        });
+        document.addEventListener('click', () => {
+            worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+            worksChevron && worksChevron.classList.remove('rotate-180');
+        });
+    }
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.querySelector('.material-symbols-outlined').textContent =
+                mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+    }
+</script>
+</body></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>設計方法論 | TAKUMI - Methodology</title>
+<link rel="stylesheet" href="token-override.css"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<meta name="description" content="TAKUMI 設計方法論：Discovery, Alignment, Execution — Sidney Chen's structured approach to intentional, craft-driven design."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="設計方法論 | TAKUMI"/>
+<meta property="og:description" content="TAKUMI 設計方法論：Discovery, Alignment, Execution — Sidney Chen's structured approach to intentional, craft-driven design."/>
+<meta property="og:url" content="https://sidney77chen-lgtm.github.io/methodology.html"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .mist-overlay {
+            background-image: radial-gradient(circle at 50% 50%, rgba(248, 250, 248, 0) 0%, rgba(248, 250, 248, 0.8) 100%);
+        }
+        .grain-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            opacity: 0.05;
+        }
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-sm": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Libre Caslon Text"], "headline-display": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};</script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-fixed-dim selection:text-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl transition-opacity duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
+<a class="font-headline-sm text-headline-sm tracking-widest text-primary dark:text-primary-fixed uppercase" href="index.html">TAKUMI</a>
+<div class="hidden md:flex items-center gap-10">
+<div class="relative" id="works-nav">
+  <button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300 flex items-center gap-1 focus:outline-none" id="works-btn">
+    精選作品<span class="material-symbols-outlined transition-transform duration-200" id="works-chevron" style="font-size:16px;">expand_more</span>
+  </button>
+  <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
+    <div class="p-3 space-y-1">
+      <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+      </a>
+      <div class="h-px bg-outline-variant/40 mx-4"></div>
+      <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：美學直覺</span>
+      </a>
+      <div class="h-px bg-outline-variant/40 mx-4"></div>
+      <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：精煉與演進</span>
+      </a>
+    </div>
+  </div>
+</div>
+<a class="font-label-md text-label-md text-primary border-b border-primary/20 pb-1" href="methodology.html">設計方法論</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="about.html">關於</a>
+<a class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-primary-container transition-colors duration-300" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
+</div>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-primary" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
+<div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
+<div class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-2">精選作品</div>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
+<a class="block font-label-md text-label-md text-primary border-b border-primary/20 pb-2" href="methodology.html">設計方法論</a>
+<a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於</a>
+<a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-48 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="relative z-10 max-w-3xl">
+<span class="font-label-md text-label-md text-secondary mb-4 block uppercase tracking-widest">核心哲學</span>
+<h1 class="font-headline-display text-headline-display md:text-6xl text-primary leading-tight mb-8">設計方法論<br/><span class="text-secondary">意圖的藝術</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                設計並非裝飾之舉，而是對本質線索的探尋。我們遵循一個充滿韻律的過程：探索、方向與執行，致力於將複雜的問題轉化為寧靜且具觸感的數位體驗。
+            </p>
+</div>
+<!-- Ambient Decor -->
+<div class="absolute top-20 right-0 w-1/3 h-full opacity-10 pointer-events-none animate-float hidden md:block">
+<img alt="Stone sculpture" class="w-full h-auto object-contain grayscale" data-alt="A detailed macro photograph of a weathered stone sculpture with intricate natural grain and texture. The lighting is soft and directional, creating deep shadows that emphasize the organic form. The overall aesthetic is minimalist and zen-like, using a monochrome palette of slate greys and off-whites to evoke a sense of ancient craftsmanship and tranquility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE7DCDe4Qul_CY_VLi2bGzpP_eU5YVr13N4_Zsc9ikhNivp2KATYVlwJrpJvw_psH_1nIlxheOiaptuYWbaYszg-RMRXdCfMqiuG92ZFPB5k1D7Cz5qXIWswNxIIcPOy0l4bheoLmcnXklVdREsKeQ8ovWu4EpuJPL5Yuw7swMB_ALfUBZGadz7BAJkPOGPIfh5vLnjVGNETZtf2EUuf0nH4OXbbXGHMJ2nVyK3NUHQ97hfFLGF4EIFvthB_evzNgomD_amjA42xs"/>
+</div>
+</header>
+<!-- Section 1: Discovery and Framing -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<div class="md:col-span-4 sticky top-32">
+<span class="text-secondary font-label-md text-label-md mb-2 block">階段 01</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">探索與定錨</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    我們從探索項目的「迷霧」開始。透過深入的稽核與定位圖，我們將品牌的身份植根於歷史脈絡與未來的意圖之中。
+                </p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-md text-label-md">啟發式稽核</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">語義定位</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+<span class="font-label-md text-label-md">線索收集</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Audit Card -->
+<div class="bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
+<div class="grain-texture absolute inset-0"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4 relative z-10">策略稽核</h3>
+<div class="aspect-square bg-surface-container-high rounded-lg mb-6 flex items-center justify-center relative z-10 border border-outline-variant/30">
+<!-- Abstract positioning map visualization -->
+<div class="w-4/5 h-4/5 border border-outline-variant relative">
+<div class="absolute top-1/2 w-full h-px bg-outline-variant"></div>
+<div class="absolute left-1/2 h-full w-px bg-outline-variant"></div>
+<div class="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+<div class="absolute bottom-1/3 right-1/4 w-3 h-3 rounded-full bg-secondary"></div>
+<div class="absolute top-1/3 right-1/3 w-2 h-2 rounded-full bg-primary/40"></div>
+<span class="absolute top-2 left-2 text-[10px] uppercase opacity-50 font-label-sm">傳統</span>
+<span class="absolute bottom-2 right-2 text-[10px] uppercase opacity-50 font-label-sm">極簡</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">辨識市場標準與品牌獨特遺產之間的張力，尋找項目的「北極星」。</p>
+</div>
+<!-- Clues Card -->
+<div class="bg-surface-container-low p-10 rounded-xl mt-12 md:mt-24 relative overflow-hidden group">
+<div class="grain-texture absolute inset-0"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4 relative z-10">原型分析</h3>
+<div class="aspect-video bg-surface-container-high rounded-lg mb-6 overflow-hidden relative z-10">
+<img alt="Old manuscripts and sketches" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" data-alt="A high-angle tabletop view of old, yellowed architectural blueprints and hand-drawn charcoal sketches spread out on a dark wooden surface. Soft daylight from a nearby window creates gentle shadows and highlights the tactile texture of the paper. The scene feels intellectual and historical, using a palette of deep browns, ochres, and charcoals to represent the meticulous discovery phase of design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-QWUKpDFw7DIa8yWmwFQVqvrXxwTBkfErwn2dwxbIwwTpbkhaG_lHNVpMxSw5yXPFD9KwExtfLghV5FAbI2plcBCTdOh_1c8S76wmlTgM1A5SUvbz8N71RVgB5m7QOFwZNkIyQpkEbEggbBNZvUWXE96GM1WHvK_yiP4knzaNCaXoRJTLhvOEx_XM5nR8h4q9gNnRqC78TsZbFVmAtkGoFnmkkoHBhnTFK2hL25FWserQ2shCGDC5wumsxObPgayShpTJ_G5CV7o"/>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant relative z-10">透過民族誌與歷史研究，揭示使用者未曾言說的渴望。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Direction and Alignment -->
+<section class="bg-primary py-section-gap text-on-primary overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-20">
+<span class="text-secondary-fixed font-label-md text-label-md mb-2 block">階段 02</span>
+<h2 class="font-headline-lg text-headline-lg text-white max-w-2xl">方向與共識</h2>
+</div>
+<!-- 3 Visual Directions - Asymmetric Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+<!-- Direction A -->
+<div class="space-y-6">
+<div class="aspect-[3/4] overflow-hidden bg-primary-container relative group">
+<img alt="Visual direction A - The Mist" class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:opacity-100 transition-opacity duration-700" data-alt="An ethereal and atmospheric landscape of a dense mountain forest shrouded in thick, rolling white mist. The lighting is cold and diffused, creating a serene, almost ghostly atmosphere. The visual style is high-contrast minimalist, emphasizing the silhouettes of cedar trees against the bright fog. This image represents a 'Mist' design direction, utilizing a cool grey and white color palette to evoke tranquility and depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB865pNp-fNDnv6FYSdLlMw70A1iPxC6h73dM6EfTZD6RMgr8sfYLQYHmazkwjH3S2pbcJM4s4kygXtbODlUDfb4yPDG_yZLZ43c_ptE_mcT7Y_osw96UJ-GbDnpc-JNYHp0D9E1tK7CltWG5KlGR_J-Xborga15Bo12_1tzZRa_6a71ZFpfgPufv26_JA6mzBJKbtsQkKvUdKR_gu4jBAABWsOugzgDbwbj_JZL0ICAQxEbe6jBQcKITIXX1n3GW_60dV_kplFDvg"/>
+<div class="absolute bottom-6 left-6">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase tracking-widest text-white">路徑 A：迷霧</span>
+</div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-sm text-headline-sm mb-2">氛圍極簡</h4>
+<p class="font-body-md text-body-md text-on-primary-container">優先考慮負空間與空靈的漸層，營造出一種專注感。</p>
+</div>
+</div>
+<!-- Direction B -->
+<div class="space-y-6 md:-mb-16">
+<div class="aspect-[3/4] overflow-hidden bg-primary-container relative group">
+<img alt="Visual direction B - Tactile Wood" class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:opacity-100 transition-opacity duration-700" data-alt="A close-up shot of hand-carved dark wood joinery, showing the intricate grain and smooth, polished finish of a Japanese temple gate. The lighting is warm and rich, highlighting the organic curves and geometric precision of the wood. The color palette features deep ambers, burnt siennas, and blacks, representing a tactile and grounded design direction centered on craftsmanship and physical sensation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0yHFtJ-ZafEhUs1NGWUEZuZVRDZjC8Ye56STXlFYenn1PEAaKOZlYRuKEicl8zspeYMfaXGNrKI1nyIZP4loLNHtc6heWd3kpLM70zHdiL28HYlDFJFG2Cpu0qmhyP_92HSjojHPZUSk4yrC6yCrEH67qw36gmZ6uRPXpkD2E_GOyTB5tLveK4g4WSx_mI7_9Ep399AnYPBgt1l0p0UT16t3TRI22rRkmJI4921pCDHTVvdLxJiRgYfVfN_g47pxALq_8LLc1rlU"/>
+<div class="absolute bottom-6 left-6">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase tracking-widest text-white">路徑 B：木質</span>
+</div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-sm text-headline-sm mb-2">觸感工藝</h4>
+<p class="font-body-md text-body-md text-on-primary-container">強調紋理、擬真深度與有機的溫潤感。</p>
+</div>
+</div>
+<!-- Direction C -->
+<div class="space-y-6">
+<div class="aspect-[3/4] overflow-hidden bg-primary-container relative group">
+<img alt="Visual direction C - Iron &amp; Logic" class="w-full h-full object-cover opacity-60 mix-blend-luminosity group-hover:opacity-100 transition-opacity duration-700" data-alt="A high-precision architectural structure made of matte black steel and industrial glass. The composition is strictly geometric and symmetrical, with sharp lines and cold, technical lighting. The aesthetic is extremely modern and functional, using a palette of midnight blacks and surgical greys. This represents a logic-driven design direction focused on structure, clarity, and uncompromising precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2uKrYfF9xYoiMBdydcDtzIllyt5xXI8Sb8sIkfy0-f_wltsW75PLjLxPTBvYXKvm9svCfS_5nQcY3yNaugMUUHyC4i0AB8mzDZ0bSuPoery9BQh5YOXCTJuPkUM2zoVVUilEVpkbqqz57kNLN5nfNVENSEa2a0WgfVmQ1O9lFrOyYUqnij1CN5GBhlxNEz549O7ODVCW9Mz9jX4xpB0tujQeF4H78HC-UkYLeR5KfStcroSfNeCWrSBCeqTG3iTZyS7O0dbQiwZQ"/>
+<div class="absolute bottom-6 left-6">
+<span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase tracking-widest text-white">路徑 C：鋼鐵</span>
+</div>
+</div>
+<div class="px-2">
+<h4 class="font-headline-sm text-headline-sm mb-2">結構精準</h4>
+<p class="font-body-md text-body-md text-on-primary-container">幾何嚴謹度與功能清晰度，適用於複雜的數據系統。</p>
+</div>
+</div>
+</div>
+<!-- Objective Decision Criteria -->
+<div class="mt-40 bg-surface-container-highest/10 p-12 border border-white/10 rounded-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<span class="text-secondary-fixed block mb-2 font-label-md">準則 01</span>
+<h5 class="font-label-md text-white mb-4">情感共鳴</h5>
+<p class="text-sm opacity-70">該方向是否能在使用者心中喚起預期的心理狀態？</p>
+</div>
+<div>
+<span class="text-secondary-fixed block mb-2 font-label-md">準則 02</span>
+<h5 class="font-label-md text-white mb-4">可擴展性</h5>
+<p class="text-sm opacity-70">這種視覺語言能否支撐產品三年的發展路線圖？</p>
+</div>
+<div>
+<span class="text-secondary-fixed block mb-2 font-label-md">準則 03</span>
+<h5 class="font-label-md text-white mb-4">真實性</h5>
+<p class="text-sm opacity-70">此方向是否忠於品牌的核心起源？</p>
+</div>
+<div>
+<span class="text-secondary-fixed block mb-2 font-label-md">準則 04</span>
+<h5 class="font-label-md text-white mb-4">易用性</h5>
+<p class="text-sm opacity-70">對比度與易讀性是否符合通用標準？</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Execution and Refinement -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1 relative">
+<!-- UI Showcase - Bento Grid Style -->
+<div class="grid grid-cols-6 grid-rows-6 gap-4 h-[600px]">
+<!-- Main Screen -->
+<div class="col-span-4 row-span-6 bg-surface-container-high rounded-xl shadow-2xl overflow-hidden border border-outline-variant/20 relative">
+<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center bg-white/50 backdrop-blur-md">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/20"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container/50"></div>
+<div class="w-3 h-3 rounded-full bg-primary-fixed-dim/50"></div>
+</div>
+<span class="font-label-sm text-label-sm opacity-40 uppercase">系統活動中</span>
+</div>
+<div class="p-8 space-y-6">
+<div class="h-8 w-1/3 bg-primary/10 rounded"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="h-32 bg-surface-variant/40 rounded-lg"></div>
+<div class="h-32 bg-surface-variant/40 rounded-lg"></div>
+</div>
+<div class="h-40 bg-primary/5 rounded-lg border border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30 text-4xl">slow_motion_video</span>
+</div>
+<div class="space-y-3">
+<div class="h-4 w-full bg-surface-variant/40 rounded"></div>
+<div class="h-4 w-5/6 bg-surface-variant/40 rounded"></div>
+<div class="h-4 w-4/6 bg-surface-variant/40 rounded"></div>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 p-8">
+<div class="w-16 h-16 rounded-full bg-primary shadow-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">add</span>
+</div>
+</div>
+</div>
+<!-- Small Components -->
+<div class="col-span-2 row-span-2 bg-secondary-fixed rounded-xl p-4 flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">動態調色盤</span>
+</div>
+<div class="col-span-2 row-span-4 bg-tertiary-container text-on-tertiary-container rounded-xl p-6 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">settings_input_component</span>
+</div>
+<h5 class="font-label-md text-label-md mb-2">行為邏輯</h5>
+<p class="text-xs opacity-60">每一次互動都映射至認知模式。</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<span class="text-secondary font-label-md text-label-md mb-2 block">階段 03</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">執行與精煉</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    在最後階段，我們將視覺方向轉化為高保真使用者介面。這不僅關乎像素，更關乎行為邏輯——即使用者在應用程式中穿梭時的「感受」。
+                </p>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">animation</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-primary">微互動</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">細微的動畫提供反饋並引導視覺，而不會造成疲勞。我們稱之為「無聲反饋」。</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">grid_view</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-primary">非對稱節奏</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">擺脫僵硬的網格，轉向模仿自然流動的節律佈局，保持使用者的參與感與好奇心。</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-primary">持續打磨</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">對間距、粗細與色彩平衡進行持續精煉，確保跨越時空的永恆美感。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-margin-desktop pb-section-gap">
+<div class="bg-surface-container-highest p-16 rounded-xl text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。
+</p>
+<a class="inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。">
+開始對話
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest pt-section-gap pb-12">
+<div class="max-w-container-max mx-auto px-margin-desktop border-t-[0.5px] border-outline-variant pt-12">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="space-y-4">
+<a class="font-headline-sm text-headline-sm text-primary tracking-widest block" href="index.html">TAKUMI</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">植根於意圖的設計夥伴關係。</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2025 工藝夥伴。保留一切權利。</p>
+</div>
+<div class="flex flex-wrap gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Connect</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for scroll reveals
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Apply to some sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+
+            // Works dropdown
+            const worksBtn = document.getElementById('works-btn');
+            const worksDropdown = document.getElementById('works-dropdown');
+            const worksChevron = document.getElementById('works-chevron');
+            if (worksBtn && worksDropdown) {
+                worksBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    const isOpen = !worksDropdown.classList.contains('invisible');
+                    worksDropdown.classList.toggle('opacity-0', isOpen);
+                    worksDropdown.classList.toggle('invisible', isOpen);
+                    worksDropdown.classList.toggle('-translate-y-2', isOpen);
+                    worksChevron && worksChevron.classList.toggle('rotate-180', !isOpen);
+                });
+                document.addEventListener('click', () => {
+                    worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+                    worksChevron && worksChevron.classList.remove('rotate-180');
+                });
+            }
+
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = menuBtn.querySelector('.material-symbols-outlined');
+                    icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+                });
+            }
+        });
+    </script>
+</body></html>

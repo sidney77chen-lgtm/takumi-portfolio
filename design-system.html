@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Design System | TAKUMI</title>
+<link rel="stylesheet" href="token-override.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--sidebar-w:220px;--header-h:56px}
+  body{font-family:'Hanken Grotesk',sans-serif;background:var(--color-background,#f8faf8);color:var(--color-on-surface,#191c1b);display:flex;flex-direction:column;min-height:100vh}
+  .material-symbols-outlined{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 20;font-size:18px;vertical-align:middle;line-height:1}
+
+  /* Header */
+  #ds-header{position:fixed;top:0;left:0;right:0;height:var(--header-h);background:var(--color-surface,#f8faf8);border-bottom:0.5px solid var(--color-outline-variant,#c4c8c1);display:flex;align-items:center;padding:0 24px;gap:16px;z-index:100}
+  #ds-header .logo{font-family:'Libre Caslon Text',serif;font-size:16px;letter-spacing:0.15em;color:var(--color-primary,#182319);text-decoration:none;margin-right:auto}
+  #ds-header .status{font-size:12px;color:var(--color-on-surface-variant,#444843);display:flex;align-items:center;gap:6px}
+  #ds-header .status-dot{width:6px;height:6px;border-radius:50%;background:var(--color-outline,#747872)}
+  #ds-header .status-dot.saved{background:#4caf50}
+  #ds-header .status-dot.unsaved{background:var(--color-secondary,#79573f)}
+  #ds-header .btn-save{background:var(--color-primary,#182319);color:var(--color-on-primary,#fff);border:none;padding:8px 20px;border-radius:6px;font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;cursor:pointer;display:flex;align-items:center;gap:6px;transition:opacity .2s}
+  #ds-header .btn-save:hover{opacity:.85}
+  #ds-header .btn-save:disabled{opacity:.4;cursor:default}
+  #ds-header .btn-site{background:transparent;color:var(--color-secondary,#79573f);border:0.5px solid var(--color-outline-variant,#c4c8c1);padding:7px 16px;border-radius:6px;font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:4px;transition:border-color .2s}
+  #ds-header .btn-site:hover{border-color:var(--color-secondary,#79573f)}
+
+  /* Layout */
+  #ds-body{display:flex;margin-top:var(--header-h);min-height:calc(100vh - var(--header-h))}
+  #ds-sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--color-surface-container-lowest,#fff);border-right:0.5px solid var(--color-outline-variant,#c4c8c1);position:sticky;top:var(--header-h);height:calc(100vh - var(--header-h));overflow-y:auto;padding:24px 0}
+  #ds-sidebar a{display:flex;align-items:center;gap:10px;padding:9px 20px;font-size:13px;font-weight:500;color:var(--color-on-surface-variant,#444843);text-decoration:none;letter-spacing:0.03em;transition:all .15s;border-left:2px solid transparent}
+  #ds-sidebar a:hover,#ds-sidebar a.active{color:var(--color-primary,#182319);background:var(--color-surface-container-low,#f2f4f2);border-left-color:var(--color-primary,#182319)}
+  #ds-sidebar .nav-group{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-outline,#747872);padding:16px 20px 6px}
+  #ds-main{flex:1;overflow-y:auto;padding:40px 48px 80px}
+
+  /* Sections */
+  .ds-section{margin-bottom:64px}
+  .ds-section-title{font-family:'Libre Caslon Text',serif;font-size:28px;color:var(--color-primary,#182319);margin-bottom:8px}
+  .ds-section-desc{font-size:14px;color:var(--color-on-surface-variant,#444843);line-height:1.6;margin-bottom:32px;max-width:560px}
+  .ds-divider{height:0.5px;background:var(--color-outline-variant,#c4c8c1);margin-bottom:40px}
+
+  /* Color Grid */
+  .color-group-title{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-outline,#747872);margin-bottom:16px;margin-top:32px}
+  .color-group-title:first-child{margin-top:0}
+  .color-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:8px}
+  .color-chip{background:var(--color-surface-container-lowest,#fff);border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:8px;overflow:hidden;cursor:pointer;transition:box-shadow .2s}
+  .color-chip:hover{box-shadow:0 2px 12px rgba(0,0,0,.1)}
+  .color-swatch{height:56px;position:relative;transition:background .2s}
+  .color-swatch input[type=color]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:none;padding:0}
+  .color-meta{padding:10px 12px}
+  .color-name{font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--color-on-surface,#191c1b);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .color-hex{font-size:11px;font-family:monospace;color:var(--color-on-surface-variant,#444843)}
+  .color-chip:hover .color-meta{background:var(--color-surface-container-low,#f2f4f2)}
+
+  /* Typography */
+  .type-scale{display:flex;flex-direction:column;gap:0}
+  .type-row{display:flex;align-items:baseline;gap:24px;padding:20px 0;border-bottom:0.5px solid var(--color-outline-variant,#c4c8c1)}
+  .type-row:last-child{border-bottom:none}
+  .type-meta{width:160px;flex-shrink:0}
+  .type-label{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-secondary,#79573f);margin-bottom:4px}
+  .type-spec{font-size:11px;color:var(--color-on-surface-variant,#444843);line-height:1.5}
+  .type-specimen{flex:1;color:var(--color-primary,#182319)}
+  .type-controls{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .type-controls label{font-size:11px;color:var(--color-on-surface-variant,#444843)}
+  .type-controls input[type=range]{width:80px;accent-color:var(--color-primary,#182319)}
+  .type-controls input[type=number]{width:52px;padding:3px 6px;border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:4px;font-size:12px;text-align:center;background:var(--color-surface,#f8faf8);color:var(--color-on-surface,#191c1b)}
+
+  /* Spacing */
+  .spacing-grid{display:flex;flex-direction:column;gap:12px}
+  .spacing-row{display:flex;align-items:center;gap:16px}
+  .spacing-bar-wrap{flex:1;background:var(--color-surface-container-low,#f2f4f2);border-radius:4px;height:32px;position:relative;overflow:hidden}
+  .spacing-bar{height:100%;background:var(--color-primary-fixed,#d8e6d6);border-radius:4px;transition:width .3s;position:relative}
+  .spacing-label{font-size:12px;font-weight:600;color:var(--color-on-surface-variant,#444843);width:160px;flex-shrink:0;display:flex;justify-content:space-between;align-items:center}
+  .spacing-controls input{width:64px;padding:4px 8px;border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:4px;font-size:12px;text-align:center;background:var(--color-surface,#f8faf8);color:var(--color-on-surface,#191c1b)}
+
+  /* Radius */
+  .radius-grid{display:flex;gap:16px;flex-wrap:wrap}
+  .radius-chip{background:var(--color-surface-container-lowest,#fff);border:0.5px solid var(--color-outline-variant,#c4c8c1);padding:20px;text-align:center;min-width:100px}
+  .radius-preview{width:56px;height:56px;background:var(--color-primary-fixed,#d8e6d6);margin:0 auto 10px;transition:border-radius .3s}
+  .radius-name{font-size:11px;font-weight:600;letter-spacing:0.04em;margin-bottom:4px;color:var(--color-on-surface,#191c1b)}
+  .radius-val{font-size:11px;font-family:monospace;color:var(--color-on-surface-variant,#444843)}
+
+  /* Components */
+  .comp-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px}
+  .comp-label{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-outline,#747872);margin-bottom:12px}
+  .comp-group{background:var(--color-surface-container-lowest,#fff);border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:12px;padding:24px;margin-bottom:20px}
+  .comp-group-name{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-outline,#747872);margin-bottom:16px}
+
+  /* Buttons (using inline styles so they respond to CSS vars) */
+  .ds-btn-primary{background:var(--color-primary,#182319);color:var(--color-on-primary,#fff);border:none;padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:0.04em;cursor:pointer;font-family:'Hanken Grotesk',sans-serif;transition:opacity .2s}
+  .ds-btn-primary:hover{opacity:.85}
+  .ds-btn-primary.pill{border-radius:999px;padding:10px 28px}
+  .ds-btn-secondary{background:transparent;color:var(--color-secondary,#79573f);border:0.5px solid var(--color-secondary,#79573f);padding:10px 24px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:0.04em;cursor:pointer;font-family:'Hanken Grotesk',sans-serif}
+  .ds-card{background:var(--color-surface-container-low,#f2f4f2);border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:12px;padding:20px 24px}
+  .ds-card h3{font-family:'Libre Caslon Text',serif;font-size:20px;color:var(--color-primary,#182319);margin-bottom:8px}
+  .ds-card p{font-size:14px;line-height:1.6;color:var(--color-on-surface-variant,#444843)}
+  .ds-chip{display:inline-block;background:var(--color-secondary-fixed,#ffdcc6);color:var(--color-on-secondary-fixed-variant,#5f402a);padding:3px 10px;border-radius:4px;font-size:11px;font-weight:600;letter-spacing:0.04em}
+  .ds-nav-preview{background:var(--color-surface,#f8faf8);border:0.5px solid var(--color-outline-variant,#c4c8c1);border-radius:8px;padding:12px 20px;display:flex;align-items:center;gap:24px}
+  .ds-nav-preview .logo{font-family:'Libre Caslon Text',serif;font-size:14px;letter-spacing:0.15em;color:var(--color-primary,#182319)}
+  .ds-nav-preview a{font-size:12px;font-weight:600;letter-spacing:0.04em;color:var(--color-on-surface-variant,#444843);text-decoration:none}
+  .ds-nav-preview a.active{color:var(--color-primary,#182319);border-bottom:1px solid var(--color-primary,#182319)}
+  .ds-nav-preview .cta{background:var(--color-primary,#182319);color:var(--color-on-primary,#fff);padding:6px 16px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.04em;margin-left:auto;text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="ds-header">
+  <a class="logo" href="index.html">TAKUMI</a>
+  <span style="font-size:11px;color:var(--color-on-surface-variant);letter-spacing:0.06em;text-transform:uppercase">Design System</span>
+  <div style="width:1px;height:20px;background:var(--color-outline-variant);margin:0 4px"></div>
+  <div class="status">
+    <div class="status-dot saved" id="status-dot"></div>
+    <span id="status-text">已同步</span>
+  </div>
+  <a class="btn-site" href="index.html" target="_blank">
+    <span class="material-symbols-outlined">open_in_new</span> 預覽網站
+  </a>
+  <button class="btn-save" id="btn-save" disabled>
+    <span class="material-symbols-outlined">save</span> 套用至網站
+  </button>
+</header>
+
+<!-- Body -->
+<div id="ds-body">
+
+  <!-- Sidebar -->
+  <nav id="ds-sidebar">
+    <div class="nav-group">設計規範</div>
+    <a href="#colors" class="active"><span class="material-symbols-outlined">palette</span>色彩系統</a>
+    <a href="#type"><span class="material-symbols-outlined">text_fields</span>字型層級</a>
+    <a href="#spacing"><span class="material-symbols-outlined">space_bar</span>間距規範</a>
+    <a href="#radius"><span class="material-symbols-outlined">rounded_corner</span>圓角系統</a>
+    <div class="nav-group">組件預覽</div>
+    <a href="#components"><span class="material-symbols-outlined">widgets</span>基礎組件</a>
+    <a href="#nav-comp"><span class="material-symbols-outlined">menu</span>導覽列</a>
+    <a href="#card-comp"><span class="material-symbols-outlined">view_agenda</span>卡片</a>
+    <div class="nav-group">工具</div>
+    <a href="#export"><span class="material-symbols-outlined">download</span>匯出 CSS</a>
+  </nav>
+
+  <!-- Main -->
+  <main id="ds-main">
+
+    <!-- ── COLORS ── -->
+    <section class="ds-section" id="colors">
+      <h2 class="ds-section-title">色彩系統</h2>
+      <p class="ds-section-desc">點擊任一色塊即可調整色值。變更後點選右上角「套用至網站」，全站頁面將自動更新。</p>
+
+      <div class="color-group-title">品牌主色</div>
+      <div class="color-grid" id="grid-brand"></div>
+
+      <div class="color-group-title">主色階梯</div>
+      <div class="color-grid" id="grid-primary-scale"></div>
+
+      <div class="color-group-title">輔色階梯</div>
+      <div class="color-grid" id="grid-secondary-scale"></div>
+
+      <div class="color-group-title">第三色階梯</div>
+      <div class="color-grid" id="grid-tertiary-scale"></div>
+
+      <div class="color-group-title">表面層次</div>
+      <div class="color-grid" id="grid-surfaces"></div>
+
+      <div class="color-group-title">文字 / 輪廓</div>
+      <div class="color-grid" id="grid-text"></div>
+
+      <div class="color-group-title">錯誤 / 其他</div>
+      <div class="color-grid" id="grid-utility"></div>
+    </section>
+
+    <div class="ds-divider"></div>
+
+    <!-- ── TYPOGRAPHY ── -->
+    <section class="ds-section" id="type">
+      <h2 class="ds-section-title">字型層級</h2>
+      <p class="ds-section-desc">拖曳滑桿可調整各層級的字體大小。標題使用 Libre Caslon Text（襯線），內文使用 Hanken Grotesk（無襯線）。</p>
+      <div class="type-scale" id="type-scale"></div>
+    </section>
+
+    <div class="ds-divider"></div>
+
+    <!-- ── SPACING ── -->
+    <section class="ds-section" id="spacing">
+      <h2 class="ds-section-title">間距規範</h2>
+      <p class="ds-section-desc">調整核心間距單位，影響頁面節奏與呼吸感。</p>
+      <div class="spacing-grid" id="spacing-grid"></div>
+    </section>
+
+    <div class="ds-divider"></div>
+
+    <!-- ── RADIUS ── -->
+    <section class="ds-section" id="radius">
+      <h2 class="ds-section-title">圓角系統</h2>
+      <p class="ds-section-desc">Takumi 設計系統採用克制的圓角，避免過於圓潤或過於尖銳的視覺感受。</p>
+      <div class="radius-grid" id="radius-grid"></div>
+    </section>
+
+    <div class="ds-divider"></div>
+
+    <!-- ── COMPONENTS ── -->
+    <section class="ds-section" id="components">
+      <h2 class="ds-section-title">基礎組件</h2>
+      <p class="ds-section-desc">組件依設計規範即時渲染，顏色調整後此處同步更新。</p>
+
+      <div class="comp-group" id="nav-comp">
+        <div class="comp-group-name">導覽列</div>
+        <div class="ds-nav-preview">
+          <span class="logo">TAKUMI</span>
+          <a class="active" href="#">精選作品</a>
+          <a href="#">設計方法論</a>
+          <a href="#">關於</a>
+          <a class="cta" href="#">聯繫諮詢</a>
+        </div>
+      </div>
+
+      <div class="comp-group">
+        <div class="comp-group-name">按鈕</div>
+        <div class="comp-row">
+          <button class="ds-btn-primary">主要按鈕</button>
+          <button class="ds-btn-primary pill">圓角按鈕</button>
+          <button class="ds-btn-secondary">次要按鈕</button>
+          <span class="ds-chip">類別標籤</span>
+        </div>
+      </div>
+
+      <div class="comp-group" id="card-comp">
+        <div class="comp-group-name">卡片</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="ds-card">
+            <span class="ds-chip" style="margin-bottom:12px;display:inline-block">策略與遠景 · 2023</span>
+            <h3>品牌識別：美學直覺</h3>
+            <p>為精品工作室打造的品牌識別系統，將創辦人的直覺審美轉譯為可溝通的視覺語言。</p>
+          </div>
+          <div class="ds-card" style="background:var(--color-primary-container);border-color:transparent">
+            <span style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--color-on-primary-container);opacity:.6;display:block;margin-bottom:12px">自然韌性</span>
+            <h3 style="font-size:18px;color:var(--color-on-primary-container)">就像雪松的緩慢生長——偉大的設計需要耐心。</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-group">
+        <div class="comp-group-name">CTA 區塊</div>
+        <div style="background:var(--color-surface-container-highest);padding:40px;border-radius:12px;text-align:center">
+          <h2 style="font-family:'Libre Caslon Text',serif;font-size:32px;color:var(--color-primary);margin-bottom:12px;line-height:1.3">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
+          <p style="font-size:16px;color:var(--color-on-surface-variant);max-width:480px;margin:0 auto 24px;line-height:1.6">如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。</p>
+          <button class="ds-btn-primary pill" style="display:inline-flex;align-items:center;gap:8px">
+            開始對話 <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="ds-divider"></div>
+
+    <!-- ── EXPORT ── -->
+    <section class="ds-section" id="export">
+      <h2 class="ds-section-title">匯出 CSS</h2>
+      <p class="ds-section-desc">複製以下 CSS 變數，可貼入任何專案使用。</p>
+      <div style="position:relative">
+        <pre id="export-code" style="background:var(--color-surface-container);border:0.5px solid var(--color-outline-variant);border-radius:8px;padding:20px 24px;font-family:monospace;font-size:12px;line-height:1.7;color:var(--color-on-surface);overflow-x:auto;white-space:pre-wrap;max-height:400px;overflow-y:auto"></pre>
+        <button onclick="copyExport()" style="position:absolute;top:12px;right:12px;background:var(--color-primary);color:var(--color-on-primary);border:none;padding:6px 14px;border-radius:4px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Hanken Grotesk',sans-serif">複製</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const API = 'http://localhost:8766';
+let tokens = {};
+let dirty = false;
+
+// ── Token definitions ──
+const COLOR_GROUPS = {
+  'grid-brand': [
+    { key: '--color-primary',   label: 'Primary',   desc: '主色：深森林綠' },
+    { key: '--color-secondary', label: 'Secondary', desc: '輔色：暖木棕' },
+    { key: '--color-tertiary',  label: 'Tertiary',  desc: '第三色：深岩板藍' },
+  ],
+  'grid-primary-scale': [
+    { key: '--color-primary-container',        label: 'primary-container' },
+    { key: '--color-on-primary',               label: 'on-primary' },
+    { key: '--color-on-primary-container',     label: 'on-primary-container' },
+    { key: '--color-primary-fixed',            label: 'primary-fixed' },
+    { key: '--color-primary-fixed-dim',        label: 'primary-fixed-dim' },
+    { key: '--color-on-primary-fixed',         label: 'on-primary-fixed' },
+    { key: '--color-on-primary-fixed-variant', label: 'on-primary-fixed-variant' },
+    { key: '--color-inverse-primary',          label: 'inverse-primary' },
+  ],
+  'grid-secondary-scale': [
+    { key: '--color-secondary-container',         label: 'secondary-container' },
+    { key: '--color-on-secondary',                label: 'on-secondary' },
+    { key: '--color-on-secondary-container',      label: 'on-secondary-container' },
+    { key: '--color-secondary-fixed',             label: 'secondary-fixed' },
+    { key: '--color-secondary-fixed-dim',         label: 'secondary-fixed-dim' },
+    { key: '--color-on-secondary-fixed',          label: 'on-secondary-fixed' },
+    { key: '--color-on-secondary-fixed-variant',  label: 'on-secondary-fixed-variant' },
+  ],
+  'grid-tertiary-scale': [
+    { key: '--color-tertiary-container',          label: 'tertiary-container' },
+    { key: '--color-on-tertiary',                 label: 'on-tertiary' },
+    { key: '--color-on-tertiary-container',       label: 'on-tertiary-container' },
+    { key: '--color-tertiary-fixed',              label: 'tertiary-fixed' },
+    { key: '--color-tertiary-fixed-dim',          label: 'tertiary-fixed-dim' },
+    { key: '--color-on-tertiary-fixed',           label: 'on-tertiary-fixed' },
+    { key: '--color-on-tertiary-fixed-variant',   label: 'on-tertiary-fixed-variant' },
+  ],
+  'grid-surfaces': [
+    { key: '--color-background',                  label: 'background' },
+    { key: '--color-surface',                     label: 'surface' },
+    { key: '--color-surface-container-lowest',    label: 'container-lowest' },
+    { key: '--color-surface-container-low',       label: 'container-low' },
+    { key: '--color-surface-container',           label: 'container' },
+    { key: '--color-surface-container-high',      label: 'container-high' },
+    { key: '--color-surface-container-highest',   label: 'container-highest' },
+    { key: '--color-surface-dim',                 label: 'surface-dim' },
+    { key: '--color-surface-variant',             label: 'surface-variant' },
+    { key: '--color-surface-tint',                label: 'surface-tint' },
+  ],
+  'grid-text': [
+    { key: '--color-on-background',     label: 'on-background' },
+    { key: '--color-on-surface',        label: 'on-surface' },
+    { key: '--color-on-surface-variant',label: 'on-surface-variant' },
+    { key: '--color-inverse-surface',   label: 'inverse-surface' },
+    { key: '--color-inverse-on-surface',label: 'inverse-on-surface' },
+    { key: '--color-outline',           label: 'outline' },
+    { key: '--color-outline-variant',   label: 'outline-variant' },
+  ],
+  'grid-utility': [
+    { key: '--color-error',             label: 'error' },
+    { key: '--color-on-error',          label: 'on-error' },
+    { key: '--color-error-container',   label: 'error-container' },
+    { key: '--color-on-error-container',label: 'on-error-container' },
+  ],
+};
+
+const TYPE_SCALE = [
+  { key:'--font-size-display',     label:'Display',       family:'Libre Caslon Text, serif', weight:'400', lh:'1.1',  specimen:'顯示標題 Aa',  min:40, max:96  },
+  { key:'--font-size-headline-lg', label:'Headline LG',   family:'Libre Caslon Text, serif', weight:'400', lh:'1.2',  specimen:'大標題 Heading Large',  min:28, max:72  },
+  { key:'--font-size-headline-md', label:'Headline MD',   family:'Libre Caslon Text, serif', weight:'400', lh:'1.3',  specimen:'中標題 Heading Medium', min:20, max:48  },
+  { key:'--font-size-headline-sm', label:'Headline SM',   family:'Libre Caslon Text, serif', weight:'400', lh:'1.4',  specimen:'小標題 Heading Small',  min:16, max:36  },
+  { key:'--font-size-body-lg',     label:'Body LG',        family:'Hanken Grotesk, sans-serif',weight:'400', lh:'1.6',  specimen:'內文大 Body Large — 清晰、有系統、值得被記住。', min:14, max:28 },
+  { key:'--font-size-body-md',     label:'Body MD',        family:'Hanken Grotesk, sans-serif',weight:'400', lh:'1.6',  specimen:'內文 Body Medium — 品牌識別設計', min:12, max:22 },
+  { key:'--font-size-label-md',    label:'Label MD',       family:'Hanken Grotesk, sans-serif',weight:'600', lh:'1.2',  specimen:'LABEL MEDIUM — CATEGORY', min:10, max:18 },
+  { key:'--font-size-label-sm',    label:'Label SM',       family:'Hanken Grotesk, sans-serif',weight:'500', lh:'1.2',  specimen:'LABEL SMALL — META INFO', min:9, max:16 },
+];
+
+const SPACING = [
+  { key:'--spacing-section-gap',     label:'Section Gap',     max:256 },
+  { key:'--spacing-margin-desktop',  label:'Margin Desktop',  max:128 },
+  { key:'--spacing-gutter',          label:'Gutter',          max:64 },
+];
+
+const RADIUS = [
+  { label:'sm',     cssVar:'--radius-sm',      default:'0.125rem' },
+  { label:'default',cssVar:'--radius-default', default:'0.25rem' },
+  { label:'lg',     cssVar:'--radius-lg',       default:'0.5rem' },
+  { label:'full',   cssVar:'--radius-full',     default:'0.75rem' },
+];
+
+// ── Helpers ──
+function getToken(key) {
+  return tokens[key] || getComputedStyle(document.documentElement).getPropertyValue(key).trim();
+}
+
+function setToken(key, val) {
+  tokens[key] = val;
+  document.documentElement.style.setProperty(key, val);
+  markDirty();
+}
+
+function markDirty() {
+  dirty = true;
+  document.getElementById('status-dot').className = 'status-dot unsaved';
+  document.getElementById('status-text').textContent = '有未儲存的更改';
+  document.getElementById('btn-save').disabled = false;
+  updateExport();
+}
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgb(${r},${g},${b})`;
+}
+
+function getLuminance(hex) {
+  const r=parseInt(hex.slice(1,3),16)/255, g=parseInt(hex.slice(3,5),16)/255, b=parseInt(hex.slice(5,7),16)/255;
+  return 0.2126*r + 0.7152*g + 0.0722*b;
+}
+
+// ── Build Color Grid ──
+function buildColorGrids() {
+  for (const [gridId, chips] of Object.entries(COLOR_GROUPS)) {
+    const grid = document.getElementById(gridId);
+    if (!grid) continue;
+    chips.forEach(({key, label, desc}) => {
+      const val = getToken(key);
+      const chip = document.createElement('div');
+      chip.className = 'color-chip';
+      chip.title = `點擊調整 ${label}`;
+
+      const textColor = val && getLuminance(val) > 0.4 ? '#182319' : '#ffffff';
+      chip.innerHTML = `
+        <div class="color-swatch" style="background:${val}">
+          <input type="color" value="${val||'#000000'}" data-key="${key}" title="選擇顏色"/>
+        </div>
+        <div class="color-meta">
+          <div class="color-name">${label}</div>
+          <div class="color-hex" id="hex-${key.replace(/-/g,'_')}">${val||'—'}</div>
+          ${desc ? `<div style="font-size:10px;color:var(--color-outline);margin-top:2px">${desc}</div>` : ''}
+        </div>`;
+
+      const input = chip.querySelector('input[type=color]');
+      const swatch = chip.querySelector('.color-swatch');
+      const hexEl = chip.querySelector('.color-hex');
+
+      input.addEventListener('input', e => {
+        const newVal = e.target.value;
+        swatch.style.background = newVal;
+        hexEl.textContent = newVal;
+        setToken(key, newVal);
+      });
+
+      // Click on swatch triggers color picker
+      swatch.addEventListener('click', () => input.click());
+      grid.appendChild(chip);
+    });
+  }
+}
+
+// ── Build Type Scale ──
+function buildTypeScale() {
+  const container = document.getElementById('type-scale');
+  TYPE_SCALE.forEach(({ key, label, family, weight, lh, specimen, min, max }) => {
+    const currentVal = getToken(key);
+    const sizePx = parseInt(currentVal) || 16;
+
+    const row = document.createElement('div');
+    row.className = 'type-row';
+    row.innerHTML = `
+      <div class="type-meta">
+        <div class="type-label">${label}</div>
+        <div class="type-spec">${sizePx}px · wt ${weight} · lh ${lh}<br/>${family.split(',')[0]}</div>
+      </div>
+      <div class="type-specimen" style="font-family:${family};font-size:${sizePx}px;font-weight:${weight};line-height:${lh}">${specimen}</div>
+      <div class="type-controls">
+        <label>${sizePx}px</label>
+        <input type="range" min="${min}" max="${max}" value="${sizePx}" data-key="${key}"/>
+        <input type="number" min="${min}" max="${max}" value="${sizePx}" style="width:52px"/>
+      </div>`;
+
+    const slider = row.querySelector('input[type=range]');
+    const numInput = row.querySelector('input[type=number]');
+    const specimen_el = row.querySelector('.type-specimen');
+    const label_el = row.querySelector('.type-controls label');
+    const spec_el = row.querySelector('.type-spec');
+
+    function updateSize(val) {
+      val = Math.max(min, Math.min(max, parseInt(val)));
+      slider.value = val; numInput.value = val;
+      label_el.textContent = val + 'px';
+      specimen_el.style.fontSize = val + 'px';
+      spec_el.textContent = `${val}px · wt ${weight} · lh ${lh}\n${family.split(',')[0]}`;
+      setToken(key, val + 'px');
+    }
+    slider.addEventListener('input', e => updateSize(e.target.value));
+    numInput.addEventListener('change', e => updateSize(e.target.value));
+    container.appendChild(row);
+  });
+}
+
+// ── Build Spacing ──
+function buildSpacing() {
+  const container = document.getElementById('spacing-grid');
+  SPACING.forEach(({ key, label, max }) => {
+    const val = parseInt(getToken(key)) || 0;
+    const pct = Math.round(val / max * 100);
+    const row = document.createElement('div');
+    row.className = 'spacing-row';
+    row.innerHTML = `
+      <div class="spacing-label">
+        <span>${label}</span>
+        <span style="font-family:monospace;font-size:11px">${val}px</span>
+      </div>
+      <div class="spacing-bar-wrap">
+        <div class="spacing-bar" style="width:${pct}%"></div>
+      </div>
+      <div class="spacing-controls">
+        <input type="number" min="0" max="${max}" value="${val}" data-key="${key}" style="width:64px"/>
+      </div>`;
+
+    const input = row.querySelector('input');
+    const bar = row.querySelector('.spacing-bar');
+    const lbl = row.querySelector('.spacing-label span:last-child');
+    input.addEventListener('change', e => {
+      const v = Math.max(0, Math.min(max, parseInt(e.target.value)||0));
+      input.value = v; lbl.textContent = v + 'px';
+      bar.style.width = Math.round(v/max*100) + '%';
+      setToken(key, v + 'px');
+    });
+    container.appendChild(row);
+  });
+}
+
+// ── Build Radius ──
+function buildRadius() {
+  const container = document.getElementById('radius-grid');
+  RADIUS.forEach(({ label, cssVar, default: def }) => {
+    const raw = getToken(cssVar) || def;
+    const px = parseFloat(raw) * 16;
+    const chip = document.createElement('div');
+    chip.className = 'radius-chip';
+    chip.innerHTML = `
+      <div class="radius-preview" style="border-radius:${raw}"></div>
+      <div class="radius-name">${label}</div>
+      <div class="radius-val">${raw}</div>`;
+    container.appendChild(chip);
+  });
+}
+
+// ── Sidebar Nav ──
+function initSidebarNav() {
+  const links = document.querySelectorAll('#ds-sidebar a[href^="#"]');
+  const sections = [...document.querySelectorAll('.ds-section')];
+
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  const main = document.getElementById('ds-main');
+  main.addEventListener('scroll', () => {
+    let current = sections[0].id;
+    sections.forEach(s => {
+      if (main.scrollTop + 100 >= s.offsetTop) current = s.id;
+    });
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+  });
+}
+
+// ── Save ──
+async function saveTokens() {
+  const btn = document.getElementById('btn-save');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="material-symbols-outlined">hourglass_empty</span> 儲存中…';
+
+  try {
+    const res = await fetch(`${API}/save`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(tokens)
+    });
+    if (!res.ok) throw new Error('Server error');
+
+    dirty = false;
+    document.getElementById('status-dot').className = 'status-dot saved';
+    document.getElementById('status-text').textContent = '已同步 — ' + new Date().toLocaleTimeString('zh-TW');
+    btn.innerHTML = '<span class="material-symbols-outlined">check</span> 已套用';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined">save</span> 套用至網站';
+      btn.disabled = true;
+    }, 2000);
+  } catch {
+    document.getElementById('status-dot').className = 'status-dot unsaved';
+    document.getElementById('status-text').textContent = '⚠ 請先啟動 token_server.py';
+    btn.innerHTML = '<span class="material-symbols-outlined">save</span> 套用至網站';
+    btn.disabled = false;
+  }
+}
+
+// ── Export ──
+function updateExport() {
+  const lines = [':root {'];
+  for (const [k, v] of Object.entries(tokens)) {
+    lines.push(`  ${k}: ${v};`);
+  }
+  lines.push('}');
+  document.getElementById('export-code').textContent = lines.join('\n');
+}
+
+function copyExport() {
+  navigator.clipboard.writeText(document.getElementById('export-code').textContent)
+    .then(() => alert('CSS 已複製到剪貼簿'));
+}
+
+// ── Load current tokens from server ──
+async function loadTokens() {
+  try {
+    const res = await fetch(`${API}/tokens`);
+    if (res.ok) {
+      tokens = await res.json();
+      // Apply loaded tokens to page
+      for (const [k, v] of Object.entries(tokens)) {
+        document.documentElement.style.setProperty(k, v);
+      }
+    }
+  } catch {
+    // Server not running — use CSS computed values
+    const cs = getComputedStyle(document.documentElement);
+    [...document.styleSheets].forEach(sheet => {
+      try {
+        [...sheet.cssRules].forEach(rule => {
+          if (rule.selectorText === ':root') {
+            [...rule.style].forEach(prop => {
+              if (prop.startsWith('--')) tokens[prop] = rule.style.getPropertyValue(prop).trim();
+            });
+          }
+        });
+      } catch {}
+    });
+  }
+}
+
+// ── Init ──
+document.getElementById('btn-save').addEventListener('click', saveTokens);
+
+loadTokens().then(() => {
+  buildColorGrids();
+  buildTypeScale();
+  buildSpacing();
+  buildRadius();
+  initSidebarNav();
+  updateExport();
+});
+</script>
+</body>
+</html>
