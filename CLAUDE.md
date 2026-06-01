@@ -163,34 +163,91 @@ Copy from `index.html` nav section — do not rewrite from scratch.
 
 ---
 
-## Known Issues to Fix
+## Known Issues
 
-- [ ] `methodology.html` has **duplicate Google Fonts `<link>` tags** — remove redundant ones
-- [ ] `selected_works.html` missing `PingFang TC` fallback in fontFamily config  
-- [ ] Nav Tailwind config block inconsistent across pages (some missing PingFang TC fallback)
-- [ ] LinkedIn and Dribbble links in footer are `href="#"` — need real URLs
-- [ ] Footer copyright year is `2024` — update to `2025`
-- [ ] Illustration placeholder in `about.html` needs real image
-- [ ] No `<meta name="description">` or OG tags on inner pages
+- [x] ~~`methodology.html` 重複 Google Fonts link~~ — 已修復
+- [x] ~~`selected_works.html` 缺少 PingFang TC fallback~~ — 已修復
+- [x] ~~Footer copyright year 2024~~ — 已更新為 2025
+- [x] ~~OG tags 缺失~~ — 已補齊（含正確的 /takumi-portfolio/ 路徑）
+- [ ] LinkedIn 連結仍為 `href="#"` — 等待真實 URL
+- [ ] Dribbble 連結仍為 `href="#"` — 等待真實 URL 或考慮移除
+- [ ] `about.html` 插畫佔位符 — 等待真實圖片（放入 assets/ 資料夾）
+- [ ] 各 case study 頁面圖片仍為佔位符 — 等待真實截圖素材
+- [ ] 尚未在真實手機瀏覽器測試 RWD
 
 ---
 
-## Deployment Target
+## Deployment
 
-- **Platform:** GitHub Pages or Vercel (static, no server)
-- **Method:** Push entire folder to GitHub repo → enable Pages from root
-- `token_server.py` is local development only — do NOT deploy
+- **Platform:** GitHub Pages ✅ 已上線
+- **Live URL:** https://sidney77chen-lgtm.github.io/takumi-portfolio/
+- **Repo:** https://github.com/sidney77chen-lgtm/takumi-portfolio
+- **Branch:** master → root (/)
+- `token_server.py` 是本地開發工具，已加入 `.gitignore`，不會部署
+
+---
+
+## 工作流規範（Workflow Rules）
+
+### 每次 Session 開始前
+1. 必須先 `Read CLAUDE.md` — 不得跳過
+2. 必須先 `Read` 目標檔案 — 不得憑記憶修改
+3. 確認 Page Completion Status 和 Known Issues 後再動手
+
+### 修改規則
+- **一次只改一個檔案** — 不得同時修改多個頁面
+- **禁止硬編碼顏色數值** — 一律使用 `token-override.css` 的 CSS 變數（如 `bg-primary`、`text-on-surface-variant`）
+- **禁止修改 Tailwind config 區塊** — 除非明確指示
+- **禁止重寫 nav 和 footer** — 只能從 `index.html` 複製，不得重新生成
+- **所有間距必須是 8px 的倍數** — 不得使用任意數值（如 `p-[13px]`）
+- **禁止新增任何 npm 套件或 build 工具** — 這是純靜態專案
+
+### 輸出規則
+- 輸出完整檔案內容，不得只輸出片段
+- 不需要解釋，直接輸出檔案
+- 不得用 markdown code fence 包住輸出（直接輸出 HTML）
+
+### 部署規則
+每次修改完畢後，在終端機執行：
+```bash
+cd ~/Desktop/vibecoding/profolio
+git add .
+git commit -m "說明這次改了什麼"
+git push
+```
+推送後約 1–2 分鐘網站自動更新。
+
+### 完成一個任務後
+在 CLAUDE.md 更新以下內容：
+- 把已解決的 Known Issues 標記為 ✅
+- 更新 Page Completion Status
+- 新增任何發現的新問題到 Known Issues
 
 ---
 
 ## How to Start a New Session
 
-Paste this at the start of every Claude Code session:
+複製以下模板，填入空格後貼進 Claude Code：
 
 ```
-Read CLAUDE.md. Then read [specific file you're working on].
-Task: [what you want to do].
-Output the updated file only. No explanation.
+Read CLAUDE.md. Read [TARGET_FILE].
+
+Task: [一句話描述任務]
+Only modify: [要改的區塊]
+Do not touch: nav, footer, Tailwind config, token-override.css link
+
+Output: updated [TARGET_FILE] only. No explanation.
+```
+
+**範例：**
+```
+Read CLAUDE.md. Read about.html.
+
+Task: Replace the illustration placeholder div with an <img> tag pointing to assets/illustration-01.jpg
+Only modify: the illustration section
+Do not touch: nav, footer, Tailwind config, token-override.css link
+
+Output: updated about.html only. No explanation.
 ```
 
 ---
