@@ -15,6 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="token-override.css"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="unlock-guard.js"></script>
 <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk", "PingFang TC", "sans-serif"], "headline-sm": ["Libre Caslon Text", "PingFang TC", "serif"], "headline-lg-mobile": ["Libre Caslon Text", "PingFang TC", "serif"], "label-md": ["Hanken Grotesk", "PingFang TC", "sans-serif"], "headline-lg": ["Libre Caslon Text", "PingFang TC", "serif"], "headline-display": ["Libre Caslon Text", "PingFang TC", "serif"], "headline-md": ["Libre Caslon Text", "PingFang TC", "serif"], "body-lg": ["Hanken Grotesk", "PingFang TC", "sans-serif"], "label-sm": ["Hanken Grotesk", "PingFang TC", "sans-serif"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};</script>
 <style>
         .mist-overlay {
@@ -52,18 +53,18 @@
   <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
     <div class="p-3 space-y-1">
       <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品設計 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Medical SaaS 平台重設計</span>
       </a>
       <div class="h-px bg-outline-variant/40 mx-4"></div>
       <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：美學直覺</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品設計 · 2025</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">房仲招募平台設計</span>
       </a>
       <div class="h-px bg-outline-variant/40 mx-4"></div>
       <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：精煉與演進</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">設計系統 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">企業級設計系統</span>
       </a>
     </div>
   </div>
@@ -80,9 +81,9 @@
 <div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
 <div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
 <div class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-2">精選作品</div>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— Medical SaaS 平台重設計</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 房仲招募平台設計</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 企業級設計系統</a>
 <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="methodology.html">設計方法論</a>
 <a class="block font-label-md text-label-md text-primary border-b border-primary/20 pb-2" href="about.html">關於</a>
 <a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">聯繫諮詢</a>
@@ -209,9 +210,9 @@
 <div class="flex flex-wrap gap-12">
 <div class="flex flex-col gap-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">Medical SaaS</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">房仲招募平台設計</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">企業級設計系統</a>
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>

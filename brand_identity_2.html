@@ -2,34 +2,78 @@
 <html lang="zh-Hant"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>品牌識別：精煉與演進 | TAKUMI</title>
-<meta name="description" content="A brand identity case study tracing the refinement and evolution of a visual system over time. By Sidney Chen."/>
+<title>設計系統思維 | TAKUMI</title>
+<meta name="description" content="在高度客製化、難以沉澱為通用資產的專案中，以設計系統的方法論——Variants 元件防呆與 Token 語意化——確保專案內部一致性與高效交接。Sidney Chen."/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="品牌識別：精煉與演進 | TAKUMI"/>
-<meta property="og:description" content="A brand identity case study tracing the refinement and evolution of a visual system over time. By Sidney Chen."/>
+<meta property="og:title" content="設計系統思維 | TAKUMI"/>
+<meta property="og:description" content="以設計系統的方法論駕馭高客製化專案，確保專案內部一致性與高效的工程交接。"/>
 <meta property="og:url" content="https://sidney77chen-lgtm.github.io/takumi-portfolio/brand_identity_2.html"/>
 <link rel="stylesheet" href="token-override.css"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="unlock-guard.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-sm": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Libre Caslon Text"], "headline-display": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};
-</script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-sm": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Libre Caslon Text"], "headline-display": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};</script>
 <style>
-    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-    body { background-color: #f8faf8; }
-    .mist-overlay {
-        background-image: radial-gradient(circle at 2px 2px, rgba(24, 35, 25, 0.05) 1px, transparent 0);
-        background-size: 40px 40px;
-    }
-    .reveal-up { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
-    .reveal-up.active { opacity: 1; transform: translateY(0); }
-    .scroll-indicator { height: 2px; background: #182319; transform-origin: left; transform: scaleX(0); }
-    #works-dropdown { transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  body { background-color: #f8faf8; }
+  /* Scroll progress */
+  .scroll-indicator { height: 2px; background: #182319; transform-origin: left; transform: scaleX(0); }
+  /* Scroll reveal */
+  .cs-reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .cs-reveal.active { opacity: 1; transform: none; }
+  /* Shared section padding */
+  .cs-section { max-width: 1280px; margin: 0 auto; padding: 80px 64px; }
+  .cs-divider { max-width: 1280px; margin: 0 auto; padding: 0 64px; }
+  .cs-divider hr { border: none; border-top: 0.5px solid var(--color-outline-variant); }
+  /* Tag chips */
+  .cs-tag { display: inline-flex; align-items: center; padding: 5px 12px; background: var(--color-surface-container); border: 0.5px solid var(--color-outline-variant); border-radius: 4px; font-family: 'Hanken Grotesk', sans-serif; font-size: 12px; font-weight: 500; color: var(--color-on-surface-variant); letter-spacing: 0.03em; }
+  /* Meta grid */
+  .cs-meta-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 0.5px solid var(--color-outline-variant); border-radius: 8px; overflow: hidden; }
+  .cs-meta-card { padding: 24px 20px; border-right: 0.5px solid var(--color-outline-variant); }
+  .cs-meta-card:last-child { border-right: none; }
+  /* ── Decision block：圖片完整顯示（不裁切），文字在下 ── */
+  .ds-decision { border: 0.5px solid var(--color-outline-variant); border-radius: 12px; overflow: hidden; background: var(--color-surface-container-lowest); margin-bottom: 24px; transition: box-shadow .25s; }
+  .ds-decision:hover { box-shadow: 0 6px 32px rgba(24,35,25,.08); }
+  .ds-decision-figure { background: var(--color-surface-container-low); padding: 32px; border-bottom: 0.5px solid var(--color-outline-variant); }
+  .ds-decision-figure img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 2px 16px rgba(24,35,25,.06); cursor: zoom-in; }
+  .ds-decision-body { padding: 40px 48px; display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: start; }
+  .ds-decision-num { font-family: 'Libre Caslon Text', serif; font-size: 48px; line-height: 1; color: var(--color-outline-variant); }
+  /* Impact strip */
+  .ds-impact-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; background: var(--color-primary); border-radius: 12px; overflow: hidden; }
+  .ds-impact-cell { padding: 40px 32px; border-right: 0.5px solid rgba(255,255,255,.12); }
+  .ds-impact-cell:last-child { border-right: none; }
+  /* Reflection */
+  .cs-reflection p + p { margin-top: 24px; }
+  /* Case nav */
+  .cs-case-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1280px; margin: 0 auto; padding: 0 64px 80px; }
+  .cs-case-nav-btn { display: flex; align-items: center; gap: 16px; padding: 24px; border: 0.5px solid var(--color-outline-variant); border-radius: 8px; text-decoration: none; color: var(--color-on-surface); transition: all .2s; background: var(--color-surface-container-lowest); }
+  .cs-case-nav-btn:hover { border-color: var(--color-primary); background: var(--color-surface-container-low); }
+  .cs-case-nav-btn.right { flex-direction: row-reverse; text-align: right; }
+  /* Lightbox */
+  #cs-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out; }
+  #cs-lightbox img { max-width: 92vw; max-height: 86vh; object-fit: contain; border-radius: 6px; }
+  #cs-lightbox .lb-caption { color: rgba(255,255,255,.6); font-size: 13px; margin-top: 16px; letter-spacing: 0.03em; }
+  #cs-lightbox .lb-close { position: absolute; top: 20px; right: 20px; color: #fff; background: rgba(255,255,255,.15); border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  /* RWD */
+  @media(max-width: 900px) {
+    .cs-section, .cs-divider, .cs-case-nav { padding-left: 24px; padding-right: 24px; }
+    .cs-meta-grid { grid-template-columns: 1fr 1fr; }
+    .cs-meta-card { border-right: none; border-bottom: 0.5px solid var(--color-outline-variant); }
+    .cs-meta-card:nth-child(odd) { border-right: 0.5px solid var(--color-outline-variant); }
+    .ds-decision-figure { padding: 16px; }
+    .ds-decision-body { grid-template-columns: 1fr; gap: 12px; padding: 28px 24px; }
+    .ds-decision-num { font-size: 36px; }
+    .ds-impact-strip { grid-template-columns: 1fr; }
+    .ds-impact-cell { border-right: none; border-bottom: 0.5px solid rgba(255,255,255,.12); }
+    .ds-impact-cell:last-child { border-bottom: none; }
+    .cs-case-nav { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body class="font-body-md text-on-surface selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
 
-<!-- Nav -->
+<!-- ── Nav ── -->
 <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl">
 <div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
   <a class="font-headline-sm text-headline-sm tracking-widest text-primary" href="index.html">TAKUMI</a>
@@ -41,18 +85,18 @@
       <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
         <div class="p-3 space-y-1">
           <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
-            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">MedTech · 2026</span>
+            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">兒童成長骨科醫療資訊系統</span>
           </a>
           <div class="h-px bg-outline-variant/40 mx-4"></div>
           <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
-            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：美學直覺</span>
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">招募平台 · 2025</span>
+            <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">高端房仲招募前台設計</span>
           </a>
           <div class="h-px bg-outline-variant/40 mx-4"></div>
           <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg bg-surface-container transition-colors group">
-            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
-            <span class="font-body-md text-body-md text-primary transition-colors">品牌識別：精煉與演進</span>
+            <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">DesignOps · 2026</span>
+            <span class="font-body-md text-body-md text-primary transition-colors">設計系統思維</span>
           </a>
         </div>
       </div>
@@ -70,9 +114,9 @@
 <div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
   <div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
     <div class="font-label-md text-label-md text-primary border-b border-primary/20 pb-2">精選作品</div>
-    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
-    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
-    <a class="block font-label-sm text-label-sm text-primary py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
+    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— 兒童成長骨科醫療資訊系統</a>
+    <a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 高端房仲招募前台設計</a>
+    <a class="block font-label-sm text-label-sm text-primary py-1 pl-4" href="brand_identity_2.html">— 設計系統思維</a>
     <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="methodology.html">設計方法論</a>
     <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於</a>
     <a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
@@ -80,284 +124,294 @@
 </div>
 </nav>
 
-<main class="mist-overlay pt-32">
-<!-- Hero -->
-<header class="px-margin-desktop max-w-container-max mx-auto py-section-gap flex flex-col md:flex-row gap-gutter items-end">
-  <div class="md:w-2/3">
-    <span class="font-label-md text-label-md text-secondary mb-4 block tracking-widest">個案研究 NO. 03</span>
-    <h1 class="font-headline-display text-headline-display text-primary max-w-4xl leading-tight">品牌識別：<br/><span>精煉與演進</span></h1>
-    <p class="font-body-lg text-body-lg text-on-surface-variant mt-8 max-w-2xl">
-      為一個自然成長十年的精品零售品牌，重建視覺系統的內在秩序。不是重塑品牌，而是讓品牌真正成為它一直想成為的樣子。
-    </p>
-  </div>
-  <div class="md:w-1/3 flex flex-col gap-2 border-l border-outline-variant pl-8 py-4">
-    <span class="font-label-sm text-label-sm text-on-surface-variant">核心：視覺系統設計</span>
-    <span class="font-label-sm text-label-sm text-on-surface-variant">客戶：精品零售品牌（保密）</span>
-    <span class="font-label-sm text-label-sm text-on-surface-variant">年份：2024</span>
-  </div>
-</header>
+<main class="pt-8">
 
-<!-- Hero Image -->
-<section class="w-full px-margin-desktop max-w-container-max mx-auto mb-section-gap">
-  <div class="aspect-[21/9] w-full bg-surface-container-high overflow-hidden rounded-lg shadow-sm">
-    <img class="w-full h-full object-cover opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaV-OaTC7Y3s1DtkHAZUja4g2WmhV1XZ89iu5UASwxpyYsX-tyoWmx0nVpyS5YYji4OswkpoqhqP5UgFC1mKHXx9PQpOrxTqebSsuEI4Mymv-le9qFhoG9ugczO74VvyTdwRPxD7Rgim1Og5sbVhKAhGI_m5eGL1rQhq4cKnLhZfclYIYpMfddEZ0i_BEBlssRYVHgkuiqDVKEasewfljhsjRtj4B9-pH9AawQ-rwaVl-vnIBh2pm1MBFaKJovsa2ITuK6Y7CQBR8" alt="Brand Identity Refinement"/>
-  </div>
-</section>
-
-<!-- Problem -->
-<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter">
-  <div class="md:col-span-5 reveal-up">
-    <h2 class="font-headline-md text-headline-md text-primary">成長的代價：視覺熵。</h2>
-  </div>
-  <div class="md:col-span-7 reveal-up">
-    <div class="space-y-6">
-      <p class="font-body-lg text-body-lg text-on-surface-variant">
-        品牌在十年間自然生長，每一次增長都帶來一個新的設計決策——字型從這裡借來，顏色從那裡取用，版面靈感來自當時流行的趨勢。結果是一個每個局部都「還好」，整體卻缺乏凝聚力的視覺系統。
-      </p>
-      <p class="font-body-lg text-body-lg text-on-surface-variant">
-        客戶的核心矛盾：品牌有強烈的個性，但這個個性只存在於長期客戶的記憶中，無法透過視覺自動傳遞給新的受眾。任何一個觸點都不足以代表品牌的全貌。
-      </p>
+<!-- ════════════════════════════════════════════════
+     S1 — HERO（無圖）
+════════════════════════════════════════════════ -->
+<section class="cs-section" style="padding-bottom:48px">
+  <div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+      <span style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-on-surface-variant)">案例 NO. 03</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:var(--color-outline)"></span>
+      <span style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary)">DesignOps · 設計系統方法論</span>
     </div>
-    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-surface-container p-8 rounded-xl text-center">
-        <div class="font-headline-md text-headline-md text-primary mb-2">6+</div>
-        <div class="font-label-sm text-label-sm text-on-surface-variant">不一致的字型變體</div>
-      </div>
-      <div class="bg-surface-container p-8 rounded-xl text-center">
-        <div class="font-headline-md text-headline-md text-secondary mb-2">14</div>
-        <div class="font-label-sm text-label-sm text-on-surface-variant">未被統一的色彩碼</div>
-      </div>
-      <div class="bg-primary-container p-8 rounded-xl text-center">
-        <div class="font-headline-md text-headline-md text-on-primary-container mb-2">∞</div>
-        <div class="font-label-sm text-label-sm text-on-primary-container/70">因不一致造成的決策成本</div>
-      </div>
+    <h1 style="font-family:'Libre Caslon Text',serif;font-size:clamp(32px,4.5vw,60px);line-height:1.1;letter-spacing:-.02em;color:var(--color-primary);margin-bottom:24px">以設計系統思維，<br/>駕馭高客製化專案</h1>
+    <p style="font-size:18px;line-height:1.7;color:var(--color-on-surface-variant);max-width:680px;margin-bottom:28px">這些專案的客製化程度極高，難以沉澱成一套可直接複用的通用資產。但我把「設計系統」的核心紀律——元件防呆與語意化命名——內化進每一個案子，確保專案內部的一致性與高效的工程交接。</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span class="cs-tag">設計主管</span>
+      <span class="cs-tag">DesignOps · 系統化方法論</span>
+      <span class="cs-tag">2026</span>
     </div>
   </div>
 </section>
 
-<!-- Strategy -->
-<section class="bg-surface-container-low py-section-gap mb-section-gap">
-  <div class="px-margin-desktop max-w-container-max mx-auto">
-    <div class="max-w-3xl mb-16 reveal-up">
-      <h2 class="font-headline-lg text-headline-lg text-primary mb-8">稽核、提煉、模組化。</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant">
-        我們不從零開始設計，而是從現有資產中「考古」——找出品牌已經在使用的、最能代表其靈魂的元素，以這些元素為核心，建立一個向外延展的模組化系統。
-      </p>
+<div class="cs-divider"><hr/></div>
+
+<!-- ════════════════════════════════════════════════
+     S2 — OVERVIEW
+════════════════════════════════════════════════ -->
+<section class="cs-section cs-reveal">
+  <div class="cs-meta-grid" style="margin-bottom:40px">
+    <div class="cs-meta-card">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-on-surface-variant);margin-bottom:8px">我的角色</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary);line-height:1.4">設計主管<br/>方法定義</div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter reveal-up">
-      <div class="group cursor-default">
-        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
-        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">01. 資產稽核</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">系統性整理過去十年所有品牌物料。建立視覺資產庫，標記每個元素的使用頻率、一致性與情感強度。</p>
-      </div>
-      <div class="group cursor-default">
-        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
-        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">02. 核心提煉</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">從稽核結果中辨識「核心元素」（不可動搖的品牌基因）與「彈性元素」（可依場景調整的視覺表達），確立系統的骨架。</p>
-      </div>
-      <div class="group cursor-default">
-        <div class="h-[0.5px] w-full bg-outline-variant group-hover:bg-secondary transition-colors duration-700 mb-6"></div>
-        <h3 class="font-headline-sm text-headline-sm text-primary mb-4">03. 模組部署</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant">將核心元素轉化為設計代幣（Design Tokens），建立可在數位與實體媒介間無縫切換的模組化視覺語言。</p>
-      </div>
+    <div class="cs-meta-card">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-on-surface-variant);margin-bottom:8px">本質定位</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary);line-height:1.4">方法論<br/>而非資產</div>
     </div>
+    <div class="cs-meta-card">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-on-surface-variant);margin-bottom:8px">實踐範圍</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary);line-height:1.4">醫療後台<br/>房仲前台</div>
+    </div>
+    <div class="cs-meta-card">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-on-surface-variant);margin-bottom:8px">時間</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary);line-height:1.4">2026<br/>持續落地</div>
+    </div>
+  </div>
+  <div style="max-width:760px">
+    <p style="font-size:17px;line-height:1.8;color:var(--color-on-surface-variant);margin-bottom:20px">兒童成長骨科醫療後台與高端房仲求職前台，是兩個業務邏輯與視覺語言截然不同的專案。它們的客製化程度極高，硬要套用同一套通用元件庫反而會綁手綁腳——<strong>因此這裡的重點不是「產出一套可共用的資產」，而是把建置設計系統的方法論與紀律，落實到每一個獨立專案之中</strong>。</p>
+    <p style="font-size:17px;line-height:1.8;color:var(--color-on-surface-variant)">用 Variants 確保元件防呆、用 Design Tokens 打通設計與工程的語言。讓每個案子即使各自獨立、無法共用元件庫，內部依然嚴謹、一致、好交接。這是一種能跨越任何專案的「設計紀律」，而非一份會過時的素材庫。</p>
   </div>
 </section>
 
-<!-- Execution -->
-<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-    <div class="order-2 md:order-1 reveal-up">
-      <!-- Design system grid visualization -->
-      <div class="bg-surface-container rounded-xl overflow-hidden p-10 space-y-6">
-        <!-- Spacing scale -->
-        <div>
-          <span class="font-label-sm text-label-sm text-on-surface-variant mb-3 block uppercase tracking-wider">間距比例系統</span>
-          <div class="flex items-end gap-2 h-16">
-            <div class="bg-primary/20 rounded" style="width:8px;height:8px;"></div>
-            <div class="bg-primary/30 rounded" style="width:16px;height:16px;"></div>
-            <div class="bg-primary/40 rounded" style="width:24px;height:24px;"></div>
-            <div class="bg-primary/50 rounded" style="width:32px;height:32px;"></div>
-            <div class="bg-primary/60 rounded" style="width:48px;height:48px;"></div>
-            <div class="bg-primary/70 rounded" style="width:64px;height:64px;"></div>
-          </div>
-          <div class="flex items-end gap-2 mt-1 text-[10px] text-on-surface-variant/50 font-label-sm">
-            <span style="width:8px;">4</span>
-            <span style="width:16px;">8</span>
-            <span style="width:24px;">12</span>
-            <span style="width:32px;">16</span>
-            <span style="width:48px;">24</span>
-            <span style="width:64px;">32</span>
-          </div>
-        </div>
-        <!-- Type refinement -->
-        <div class="border-t border-outline-variant/30 pt-6">
-          <span class="font-label-sm text-label-sm text-on-surface-variant mb-3 block uppercase tracking-wider">字型精煉前後</span>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-surface-container-high p-4 rounded-lg opacity-50">
-              <div class="text-xs text-on-surface-variant mb-1">Before</div>
-              <div style="font-size:18px;font-weight:700;letter-spacing:0;">標題文字</div>
-              <div style="font-size:14px;font-weight:400;letter-spacing:0.1em;">LABEL TEXT</div>
-            </div>
-            <div class="bg-primary-container p-4 rounded-lg">
-              <div class="text-xs text-on-primary-container/60 mb-1">After</div>
-              <div class="font-headline-sm text-headline-sm text-on-primary-container" style="font-size:18px;">標題文字</div>
-              <div class="font-label-md text-label-md text-on-primary-container/70">LABEL TEXT</div>
-            </div>
-          </div>
+<div class="cs-divider"><hr/></div>
+
+<!-- ════════════════════════════════════════════════
+     S3 — CORE DECISIONS（圖片完整顯示，是全頁重心）
+════════════════════════════════════════════════ -->
+<section class="cs-section" id="decisions" style="scroll-margin-top:96px">
+  <div style="margin-bottom:48px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:12px">核心系統邏輯</div>
+    <h2 style="font-family:'Libre Caslon Text',serif;font-size:32px;color:var(--color-primary);margin-bottom:12px">兩道紀律，貫穿每一個專案。</h2>
+    <p style="font-size:16px;line-height:1.7;color:var(--color-on-surface-variant);max-width:620px">不論案子多麼客製，我都堅持把這兩件事做到位——它們不依賴任何現成資產，只依賴方法。</p>
+  </div>
+
+  <!-- Decision 01：Figma Variants -->
+  <div class="ds-decision cs-reveal">
+    <div class="ds-decision-figure">
+      <img src="public/case-studies/case-03/design-system-variants.png"
+           alt="Figma Variants — 元件 Properties 控制面板，將分散狀態收攏為單一 Master Component"
+           loading="lazy"
+           data-zoom
+           data-caption="決策 01：Figma Variants — 元件 Properties 控制面板特寫"/>
+    </div>
+    <div class="ds-decision-body">
+      <div class="ds-decision-num">01</div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:8px">Figma Variants · 元件防呆</div>
+        <h3 style="font-family:'Libre Caslon Text',serif;font-size:24px;color:var(--color-primary);margin-bottom:16px;line-height:1.3">用結構，取代記憶力</h3>
+        <p style="font-size:16px;line-height:1.8;color:var(--color-on-surface-variant)">在每個專案內，我利用 Figma 的 <strong>Variants（變體）</strong>與 <strong>Properties（屬性）</strong>，將分散的按鈕與輸入框狀態收攏為單一 Master Component。透過控制面板切換 Hover / Disabled、是否帶 Icon 等狀態，確保專案內任何人拉出的元件都 100% 符合規範，從源頭杜絕「同一個按鈕長得不一樣」的混亂。這套防呆紀律不依賴通用素材庫，搬到任何新專案都能立刻重建。</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+          <span class="cs-tag">Figma Variants</span>
+          <span class="cs-tag">Master Component</span>
+          <span class="cs-tag">Properties</span>
         </div>
       </div>
     </div>
-    <div class="order-1 md:order-2 space-y-8 reveal-up">
-      <span class="font-label-md text-label-md text-secondary tracking-widest">執行細節</span>
-      <h2 class="font-headline-md text-headline-md text-primary">讓系統自己說話。</h2>
-      <p class="font-body-lg text-body-lg text-on-surface-variant">
-        最終交付的不只是視覺規範，而是一套包含設計代幣、組件庫與決策樹的完整系統，讓內部團隊在沒有設計師的情況下也能做出符合品牌精神的視覺決策。
-      </p>
-      <ul class="space-y-4">
-        <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
-          <span class="font-body-md text-body-md">設計代幣系統：從 Figma 直通 CSS 變數的單一真相來源。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
-          <span class="font-body-md text-body-md">跨媒介應用規範：數位、印刷與空間環境的統一視覺語言。</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="material-symbols-outlined text-secondary text-sm mt-1">fiber_manual_record</span>
-          <span class="font-body-md text-body-md">品牌決策樹：一個非設計師也能使用的視覺判斷框架。</span>
-        </li>
-      </ul>
-    </div>
   </div>
-</section>
 
-<!-- Final Vision -->
-<section class="w-full h-[560px] relative flex items-center overflow-hidden mb-section-gap">
-  <img class="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] grayscale-[0.1]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaV-OaTC7Y3s1DtkHAZUja4g2WmhV1XZ89iu5UASwxpyYsX-tyoWmx0nVpyS5YYji4OswkpoqhqP5UgFC1mKHXx9PQpOrxTqebSsuEI4Mymv-le9qFhoG9ugczO74VvyTdwRPxD7Rgim1Og5sbVhKAhGI_m5eGL1rQhq4cKnLhZfclYIYpMfddEZ0i_BEBlssRYVHgkuiqDVKEasewfljhsjRtj4B9-pH9AawQ-rwaVl-vnIBh2pm1MBFaKJovsa2ITuK6Y7CQBR8" alt="Final brand vision"/>
-  <div class="relative px-margin-desktop max-w-container-max mx-auto w-full">
-    <div class="max-w-2xl reveal-up">
-      <h2 class="font-headline-lg text-headline-lg text-background leading-tight">最終成果：一致性即信任。</h2>
-      <p class="font-body-lg text-body-lg text-primary-fixed mt-8">
-        系統上線後，品牌的社群媒體互動率提升 28%，新客戶的首次聯繫轉換率提高 19%。一致性不只是美學問題——它是信任的基礎建設。當每一個觸點都在說同一個故事，受眾才真正開始相信這個品牌。
-      </p>
-      <div class="mt-12 flex gap-12">
-        <div>
-          <div class="font-label-sm text-label-sm text-primary-fixed/60 mb-2 uppercase tracking-widest">項目週期</div>
-          <div class="font-headline-sm text-headline-sm text-background">12 週</div>
-        </div>
-        <div>
-          <div class="font-label-sm text-label-sm text-primary-fixed/60 mb-2 uppercase tracking-widest">互動率提升</div>
-          <div class="font-headline-sm text-headline-sm text-background">+28%</div>
+  <!-- Decision 02：Design Tokens -->
+  <div class="ds-decision cs-reveal">
+    <div class="ds-decision-figure">
+      <img src="public/case-studies/case-03/design-system-tokens.png"
+           alt="Design Tokens — Figma Variables 語意化命名清單與 8pt 網格交接規格"
+           loading="lazy"
+           data-zoom
+           data-caption="決策 02：Design Tokens — Figma Variables 命名清單與 8pt 網格規格"/>
+    </div>
+    <div class="ds-decision-body">
+      <div class="ds-decision-num">02</div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:8px">Design Tokens · 語意化命名</div>
+        <h3 style="font-family:'Libre Caslon Text',serif;font-size:24px;color:var(--color-primary);margin-bottom:16px;line-height:1.3">讓設計與工程說同一種語言</h3>
+        <p style="font-size:16px;line-height:1.8;color:var(--color-on-surface-variant)">引入 <strong>Design Tokens</strong>與 <strong>8pt 網格系統</strong>。元件不再以 <code style="font-size:14px;background:var(--color-surface-container);padding:1px 6px;border-radius:3px">color-green</code> 這種「描述外觀」的方式命名，而是改用 <code style="font-size:14px;background:var(--color-surface-container);padding:1px 6px;border-radius:3px">sys.color.brand.primary</code> 這種「描述用途」的語意化代碼，與前端 CSS / JSON 變數完美對齊。即使每個專案各自獨立，交接時工程師都能用同一套規則理解設計意圖，大幅降低切版誤差與後續維護成本。</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+          <span class="cs-tag">Design Tokens</span>
+          <span class="cs-tag">8pt Grid</span>
+          <span class="cs-tag">CSS Variables</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="cs-divider"><hr/></div>
+
+<!-- ════════════════════════════════════════════════
+     S4 — IMPACT STRIP
+════════════════════════════════════════════════ -->
+<section class="cs-section cs-reveal" style="padding-top:64px;padding-bottom:64px">
+  <div class="ds-impact-strip">
+    <div class="ds-impact-cell">
+      <div style="font-family:'Libre Caslon Text',serif;font-size:48px;font-weight:400;color:#ffffff;line-height:1;margin-bottom:8px">30%</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">Handoff 溝通成本縮減</div>
+      <div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)">作品一的 20+ 張臨床醫療表單在 1 週內完成視覺對齊</div>
+    </div>
+    <div class="ds-impact-cell">
+      <div style="font-family:'Libre Caslon Text',serif;font-size:48px;font-weight:400;color:#ffffff;line-height:1;margin-bottom:8px">2 案</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">方法論跨場景落地</div>
+      <div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)">同一套系統化紀律，同時落實於醫療後台與房仲前台</div>
+    </div>
+    <div class="ds-impact-cell">
+      <div style="font-family:'Libre Caslon Text',serif;font-size:48px;font-weight:400;color:#ffffff;line-height:1;margin-bottom:8px">0</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">專案內重複造輪子</div>
+      <div style="font-size:14px;line-height:1.6;color:rgba(255,255,255,.65)">同一專案的新功能直接從 Master Component 拉取，無需重畫</div>
+    </div>
+  </div>
+</section>
+
+<div class="cs-divider"><hr/></div>
+
+<!-- ════════════════════════════════════════════════
+     S5 — REFLECTION & IMPACT
+════════════════════════════════════════════════ -->
+<section class="cs-section cs-reveal">
+  <div style="display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start">
+    <div style="position:sticky;top:80px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:12px">實質價值與資深定位</div>
+      <h2 style="font-family:'Libre Caslon Text',serif;font-size:32px;color:var(--color-primary);line-height:1.3">系統思維，<br/>不一定是<br/>一套系統。</h2>
+    </div>
+    <div class="cs-reflection">
+      <p style="font-size:17px;line-height:1.8;color:var(--color-on-surface-variant)">很多人以為設計系統就是「做一套元件庫丟給大家用」。但在高度客製化的真實專案裡，硬塞一套通用資產往往水土不服。我的體會是：設計系統真正的價值，在於它背後的<strong>紀律與方法論</strong>——元件防呆、語意化命名、嚴謹的交接標準——這些東西即使在無法共用元件庫的專案裡，依然能發揮巨大價值。</p>
+      <p style="font-size:17px;line-height:1.8;color:var(--color-on-surface-variant)">這套方法論已實際落實於<strong>作品一（醫療後台）</strong>與<strong>作品二（房仲前台）</strong>。正因為導入了這套紀律，作品一複雜的 20 多張臨床表單才能在 1 週內完成視覺對齊，幫研發團隊省下約 <strong>30% 的交接溝通時間</strong>。</p>
+      <p style="font-size:17px;line-height:1.8;color:var(--color-on-surface-variant)">它證明了我具備大廠成熟設計團隊最看重的「<strong>規模化思維（Scalability）</strong>」與「<strong>工程同理心</strong>」——能用系統化的全局觀，在最混亂、最客製的專案裡建立秩序。這是我在專業 UI/UX 團隊中推動 DesignOps 的核心優勢。</p>
+    </div>
+  </div>
+</section>
+
+<div class="cs-divider"><hr/></div>
+
+<!-- ════════════════════════════════════════════════
+     S6 — CASE NAV
+════════════════════════════════════════════════ -->
+<div class="cs-case-nav cs-reveal" style="padding-top:48px">
+  <a class="cs-case-nav-btn" href="brand_identity_1.html">
+    <span class="material-symbols-outlined" style="color:var(--color-on-surface-variant);font-size:20px">arrow_back</span>
+    <div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:4px">← 招募平台</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary)">高端房仲招募前台設計</div>
+    </div>
+  </a>
+  <a class="cs-case-nav-btn right" href="index.html">
+    <span class="material-symbols-outlined" style="color:var(--color-on-surface-variant);font-size:20px">home</span>
+    <div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--color-secondary);margin-bottom:4px">全部作品 →</div>
+      <div style="font-family:'Libre Caslon Text',serif;font-size:18px;color:var(--color-primary)">回到首頁</div>
+    </div>
+  </a>
+</div>
 
 <!-- Final CTA -->
 <section class="max-w-container-max mx-auto px-margin-desktop pb-section-gap">
-<div class="bg-surface-container-highest p-16 rounded-xl text-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
-如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。
-</p>
-<a class="inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。">
-開始對話
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-</section>
-<!-- Next Project Navigation -->
-<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
-  <div class="flex flex-col md:flex-row justify-between items-center gap-8 py-12 border-t border-outline-variant/40">
-    <a href="brand_identity_1.html" class="group flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors">
-      <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
-      <div>
-        <div class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">上一個案例</div>
-        <div class="font-body-md text-body-md">品牌識別：美學直覺</div>
-      </div>
-    </a>
-    <a href="selected_works.html" class="group flex items-center gap-4 text-on-surface-variant hover:text-primary transition-colors text-right">
-      <div>
-        <div class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">返回第一個案例</div>
-        <div class="font-body-md text-body-md">CMS 架構：行為與互動層級</div>
-      </div>
-      <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+  <div class="bg-surface-container-highest p-16 rounded-xl text-center">
+    <h2 class="font-headline-lg text-headline-lg text-primary mb-6">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。</p>
+    <a class="inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。">
+      開始對話<span class="material-symbols-outlined">arrow_forward</span>
     </a>
   </div>
 </section>
+
 </main>
 
-<!-- Footer -->
+<!-- ── Footer ── -->
 <footer class="w-full bg-surface-container-lowest pt-section-gap pb-12">
 <div class="max-w-container-max mx-auto px-margin-desktop border-t-[0.5px] border-outline-variant pt-12">
 <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-<div class="space-y-4">
-<a class="font-headline-sm text-headline-sm text-primary tracking-widest block" href="index.html">TAKUMI</a>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">植根於意圖的設計夥伴關係。</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2025 工藝夥伴。保留一切權利。</p>
-</div>
-<div class="flex flex-wrap gap-12">
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Connect</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
-</div>
-</div>
+  <div class="space-y-4">
+    <a class="font-headline-sm text-headline-sm text-primary tracking-widest block" href="index.html">TAKUMI</a>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xs">植根於意圖的設計夥伴關係。</p>
+    <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2025 工藝夥伴。保留一切權利。</p>
+  </div>
+  <div class="flex flex-wrap gap-12">
+    <div class="flex flex-col gap-4">
+      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">兒童成長骨科醫療資訊系統</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">高端房仲招募前台設計</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">設計系統思維</a>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
+    </div>
+    <div class="flex flex-col gap-4">
+      <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Connect</span>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
+    </div>
+  </div>
 </div>
 </div>
 </footer>
 
+<!-- Lightbox -->
+<div id="cs-lightbox">
+  <button class="lb-close">✕</button>
+  <img id="lb-img" alt=""/>
+  <div class="lb-caption" id="lb-cap"></div>
+</div>
+
 <script>
-    window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById('progress').style.transform = `scaleX(${winScroll / height})`;
-        document.querySelectorAll('.reveal-up').forEach(el => {
-            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
-        });
+  // Scroll progress + reveal
+  window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progress').style.transform = `scaleX(${winScroll / height})`;
+    document.querySelectorAll('.cs-reveal').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('active');
     });
-    window.dispatchEvent(new Event('scroll'));
+  });
+  window.dispatchEvent(new Event('scroll'));
 
-    const worksBtn = document.getElementById('works-btn');
-    const worksDropdown = document.getElementById('works-dropdown');
-    const worksChevron = document.getElementById('works-chevron');
-    if (worksBtn && worksDropdown) {
-        worksBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            const isOpen = !worksDropdown.classList.contains('invisible');
-            worksDropdown.classList.toggle('opacity-0', isOpen);
-            worksDropdown.classList.toggle('invisible', isOpen);
-            worksDropdown.classList.toggle('-translate-y-2', isOpen);
-            worksChevron && worksChevron.classList.toggle('rotate-180', !isOpen);
-        });
-        document.addEventListener('click', () => {
-            worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-            worksChevron && worksChevron.classList.remove('rotate-180');
-        });
-    }
+  // Works dropdown
+  const worksBtn = document.getElementById('works-btn');
+  const worksDropdown = document.getElementById('works-dropdown');
+  const worksChevron = document.getElementById('works-chevron');
+  if (worksBtn && worksDropdown) {
+    worksBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = !worksDropdown.classList.contains('invisible');
+      worksDropdown.classList.toggle('opacity-0', isOpen);
+      worksDropdown.classList.toggle('invisible', isOpen);
+      worksDropdown.classList.toggle('-translate-y-2', isOpen);
+      worksChevron && worksChevron.classList.toggle('rotate-180', !isOpen);
+    });
+    document.addEventListener('click', () => {
+      worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+      worksChevron && worksChevron.classList.remove('rotate-180');
+    });
+  }
 
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuBtn.querySelector('.material-symbols-outlined').textContent =
-                mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
-        });
-    }
+  // Mobile menu
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.querySelector('.material-symbols-outlined').textContent =
+        mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
+
+  // Lightbox
+  const lb = document.getElementById('cs-lightbox');
+  document.querySelectorAll('img[data-zoom]').forEach(el => {
+    el.addEventListener('click', () => {
+      const src = el.dataset.src || el.src;
+      const cap = el.dataset.caption || el.alt || '';
+      if (!src) return;
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lb-cap').textContent = cap;
+      lb.style.display = 'flex';
+    });
+  });
+  lb.addEventListener('click', e => { if (e.target === lb) lb.style.display = 'none'; });
+  lb.querySelector('.lb-close').addEventListener('click', () => { lb.style.display = 'none'; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.style.display = 'none'; });
 </script>
+
 </body></html>

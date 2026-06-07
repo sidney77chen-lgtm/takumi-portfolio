@@ -6,6 +6,7 @@
 <title>設計方法論 | TAKUMI - Methodology</title>
 <link rel="stylesheet" href="token-override.css"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="unlock-guard.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <meta name="description" content="TAKUMI 設計方法論：Discovery, Alignment, Execution — Sidney Chen's structured approach to intentional, craft-driven design."/>
 <meta property="og:type" content="website"/>
@@ -46,18 +47,18 @@
   <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
     <div class="p-3 space-y-1">
       <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品設計 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Medical SaaS 平台重設計</span>
       </a>
       <div class="h-px bg-outline-variant/40 mx-4"></div>
       <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：美學直覺</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品設計 · 2025</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">房仲招募平台設計</span>
       </a>
       <div class="h-px bg-outline-variant/40 mx-4"></div>
       <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：精煉與演進</span>
+        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">設計系統 · 2024</span>
+        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">企業級設計系統</span>
       </a>
     </div>
   </div>
@@ -75,9 +76,9 @@
 <div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
 <div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
 <div class="font-label-md text-label-md text-on-surface-variant border-b border-outline-variant/30 pb-2">精選作品</div>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— Medical SaaS 平台重設計</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 房仲招募平台設計</a>
+<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 企業級設計系統</a>
 <a class="block font-label-md text-label-md text-primary border-b border-primary/20 pb-2" href="methodology.html">設計方法論</a>
 <a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於</a>
 <a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">諮詢聯繫</a>
@@ -343,9 +344,9 @@
 <div class="flex flex-wrap gap-12">
 <div class="flex flex-col gap-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">Medical SaaS</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">房仲招募平台設計</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">企業級設計系統</a>
 </div>
 <div class="flex flex-col gap-4">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>

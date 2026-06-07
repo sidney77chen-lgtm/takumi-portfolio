@@ -1,334 +1,1016 @@
 <!DOCTYPE html>
-
-<html lang="zh-Hant"><head>
+<html lang="zh-Hant">
+<head>
 <title>TAKUMI — 職人設計師</title>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="TAKUMI — Senior UI/UX Designer. 系統性干預的精選作品集。Medical SaaS、招募平台、Design System。"/>
+<meta property="og:title" content="TAKUMI — 職人設計師"/>
+<meta property="og:description" content="Senior UI/UX Designer — 產品思維 × 系統設計 × 視覺工藝"/>
+<meta property="og:type" content="website"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Playfair Display: editorial headings | DM Sans: English UI | Noto Sans TC: Traditional Chinese -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="token-override.css"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="unlock-guard.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .mist-overlay {
-            background: linear-gradient(to bottom, rgba(248, 250, 248, 0) 0%, rgba(248, 250, 248, 0.8) 100%);
-        }
-        .organic-texture {
-            background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
-            opacity: 0.03;
-        }
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal-on-scroll.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Custom scrollbar for Takumi aesthetic */
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #f8faf8; }
-        ::-webkit-scrollbar-thumb { background: #556255; }
-    </style>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-variant": "#e1e3e1", background: "#f8faf8", "tertiary-fixed-dim": "#b8c8db", "outline-variant": "#c4c8c1", "primary-fixed": "#d8e6d6", "surface-container-low": "#f2f4f2", "primary-container": "#2d392e", "on-primary": "#ffffff", "on-tertiary-fixed": "#0c1d2b", "on-secondary-fixed-variant": "#5f402a", "surface-container": "#eceeec", error: "#ba1a1a", "inverse-on-surface": "#eff1ef", "on-error-container": "#93000a", "on-primary-fixed-variant": "#3e4a3e", "surface-container-highest": "#e1e3e1", "on-secondary-container": "#7a5840", "surface-dim": "#d8dad9", "on-primary-fixed": "#131e14", "surface-container-lowest": "#ffffff", "inverse-primary": "#bccabb", "on-secondary-fixed": "#2d1604", "secondary-container": "#ffd1b3", surface: "#f8faf8", "error-container": "#ffdad6", "on-primary-container": "#95a394", "on-error": "#ffffff", "secondary-fixed-dim": "#eabda0", "surface-tint": "#556255", "on-tertiary": "#ffffff", "on-background": "#191c1b", primary: "#182319", "secondary-fixed": "#ffdcc6", "on-tertiary-fixed-variant": "#394858", "primary-fixed-dim": "#bccabb", "surface-container-high": "#e6e9e7", "on-tertiary-container": "#91a1b4", "on-secondary": "#ffffff", "on-surface": "#191c1b", "inverse-surface": "#2e3130", tertiary: "#122331", outline: "#747872", "on-surface-variant": "#444843", "tertiary-fixed": "#d3e4f8", secondary: "#79573f", "surface-bright": "#f8faf8", "tertiary-container": "#283847"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"container-max": "1280px", unit: "8px", "margin-desktop": "64px", "section-gap": "128px", "margin-mobile": "24px", gutter: "32px"}, fontFamily: {"body-md": ["Hanken Grotesk"], "headline-sm": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"], "label-md": ["Hanken Grotesk"], "headline-lg": ["Libre Caslon Text"], "headline-display": ["Libre Caslon Text"], "headline-md": ["Libre Caslon Text"], "body-lg": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], headline: ["Libre Caslon Text"], display: ["Libre Caslon Text"], body: ["Hanken Grotesk"], label: ["Hanken Grotesk"]}, fontSize: {"body-md": ["16px", {lineHeight: "1.6", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "1.4", fontWeight: "400"}], "headline-lg-mobile": ["32px", {lineHeight: "1.2", fontWeight: "400"}], "label-md": ["14px", {lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["48px", {lineHeight: "1.2", fontWeight: "400"}], "headline-display": ["64px", {lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400"}], "headline-md": ["32px", {lineHeight: "1.3", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "1.6", letterSpacing: "0.01em", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "1.2", letterSpacing: "0.03em", fontWeight: "500"}]}}}};</script>
+  /* ── Material Icons ─────────────────────────────── */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ── Scroll reveal ──────────────────────────────── */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Custom scrollbar ───────────────────────────── */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #f8faf8; }
+  ::-webkit-scrollbar-thumb { background: #556255; border-radius: 9999px; }
+
+  /* ── Hover zoom on bento images ─────────────────── */
+  .bento-img-wrap {
+    overflow: hidden;
+  }
+  .bento-img-wrap img {
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .bento-card:hover .bento-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  /* ── Password gate overlay ──────────────────────── */
+  .gate-overlay {
+    background: rgba(244, 244, 242, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* ── Border line style ──────────────────────────── */
+  .border-editorial {
+    border-color: #E8E8E5;
+  }
+
+  /* ── Organic mist blob ──────────────────────────── */
+  .mist-blob {
+    filter: blur(80px);
+    border-radius: 9999px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  /* ── Alpine transition ──────────────────────────── */
+  [x-cloak] { display: none !important; }
+
+  /* ── Nav transition ─────────────────────────────── */
+  nav { transition: padding 0.3s ease, box-shadow 0.3s ease; }
+
+  /* ── Bento grid ─────────────────────────────────── */
+  .bento-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) {
+    .bento-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .bento-cell-lg   { grid-column: span 8; }
+    .bento-cell-sm   { grid-column: span 4; }
+    .bento-cell-half { grid-column: span 6; }
+  }
+
+  /* ── Typography overrides ───────────────────────── */
+  .font-playfair { font-family: 'Playfair Display', Georgia, serif; }
+  .font-dm       { font-family: 'DM Sans', system-ui, sans-serif; }
+  .font-noto-tc  { font-family: 'Noto Sans TC', 'PingFang TC', sans-serif; }
+
+  /* ── Password input focus ────────────────────────── */
+  .gate-input:focus {
+    outline: none;
+    border-color: #182319;
+    box-shadow: 0 0 0 2px rgba(24,35,25,0.08);
+  }
+
+  /* ── Chip hover ─────────────────────────────────── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* ── Stagger delays ─────────────────────────────── */
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-variant": "#e1e3e1",
+        background: "#f8faf8",
+        "outline-variant": "#c4c8c1",
+        "primary-fixed": "#d8e6d6",
+        "surface-container-low": "#f2f4f2",
+        "primary-container": "#2d392e",
+        "on-primary": "#ffffff",
+        "surface-container": "#eceeec",
+        error: "#ba1a1a",
+        "inverse-on-surface": "#eff1ef",
+        "on-primary-fixed-variant": "#3e4a3e",
+        "surface-container-highest": "#e1e3e1",
+        "on-secondary-container": "#7a5840",
+        "surface-dim": "#d8dad9",
+        "on-primary-fixed": "#131e14",
+        "surface-container-lowest": "#ffffff",
+        "inverse-primary": "#bccabb",
+        "secondary-container": "#ffd1b3",
+        surface: "#f8faf8",
+        "error-container": "#ffdad6",
+        "on-primary-container": "#95a394",
+        "on-error": "#ffffff",
+        "secondary-fixed-dim": "#eabda0",
+        "surface-tint": "#556255",
+        "on-tertiary": "#ffffff",
+        "on-background": "#191c1b",
+        primary: "#182319",
+        "secondary-fixed": "#ffdcc6",
+        "surface-container-high": "#e6e9e7",
+        "on-tertiary-container": "#91a1b4",
+        "on-secondary": "#ffffff",
+        "on-surface": "#191c1b",
+        "inverse-surface": "#2e3130",
+        tertiary: "#122331",
+        outline: "#747872",
+        "on-surface-variant": "#444843",
+        secondary: "#79573f",
+        "surface-bright": "#f8faf8",
+        "tertiary-container": "#283847",
+        "editorial-border": "#E8E8E5",
+        "gate-bg": "#F4F4F2"
+      },
+      borderRadius: {
+        DEFAULT: "0.125rem",
+        lg: "0.25rem",
+        xl: "0.5rem",
+        "2xl": "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "container-max": "1280px",
+        unit: "8px",
+        "margin-desktop": "64px",
+        "section-gap": "128px",
+        "margin-mobile": "24px",
+        gutter: "32px"
+      },
+      fontFamily: {
+        display:   ["Playfair Display", "Georgia", "serif"],
+        headline:  ["Playfair Display", "Georgia", "serif"],
+        "headline-display": ["Playfair Display", "Georgia", "serif"],
+        "headline-lg":      ["Playfair Display", "Georgia", "serif"],
+        "headline-md":      ["Playfair Display", "Georgia", "serif"],
+        "headline-sm":      ["Playfair Display", "Georgia", "serif"],
+        body:    ["DM Sans", "Noto Sans TC", "sans-serif"],
+        "body-lg": ["DM Sans", "Noto Sans TC", "sans-serif"],
+        "body-md": ["DM Sans", "Noto Sans TC", "sans-serif"],
+        label:    ["DM Sans", "Noto Sans TC", "sans-serif"],
+        "label-md": ["DM Sans", "Noto Sans TC", "sans-serif"],
+        "label-sm": ["DM Sans", "Noto Sans TC", "sans-serif"],
+        tc:  ["Noto Sans TC", "PingFang TC", "sans-serif"],
+        eng: ["DM Sans", "system-ui", "sans-serif"]
+      },
+      fontSize: {
+        "body-md":  ["16px", { lineHeight: "1.65", fontWeight: "400" }],
+        "headline-sm":  ["24px", { lineHeight: "1.4",  fontWeight: "400" }],
+        "headline-lg-mobile": ["30px", { lineHeight: "1.2", fontWeight: "400" }],
+        "label-md": ["13px", { lineHeight: "1.2", letterSpacing: "0.06em", fontWeight: "500" }],
+        "headline-lg":   ["48px", { lineHeight: "1.15", fontWeight: "400" }],
+        "headline-display": ["62px", { lineHeight: "1.08", letterSpacing: "-0.02em", fontWeight: "400" }],
+        "headline-md":   ["32px", { lineHeight: "1.3",  fontWeight: "400" }],
+        "body-lg": ["18px", { lineHeight: "1.7", letterSpacing: "0.01em", fontWeight: "400" }],
+        "label-sm": ["11px", { lineHeight: "1.2", letterSpacing: "0.06em", fontWeight: "500" }]
+      },
+      maxWidth: {
+        "container-max": "1280px"
+      }
+    }
+  }
+};
+</script>
 </head>
+
 <body class="bg-background text-on-background selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
-<!-- Navigation Shell -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl">
-<div class="flex justify-between items-center px-margin-desktop py-8 w-full max-w-container-max mx-auto">
-<a class="font-headline-sm text-headline-sm tracking-widest text-primary" href="index.html">TAKUMI</a>
-<div class="hidden md:flex items-center gap-10">
-<!-- Works Dropdown -->
-<div class="relative" id="works-nav">
-  <button class="font-label-md text-label-md text-primary border-b border-primary/20 pb-1 flex items-center gap-1 focus:outline-none" id="works-btn">
-    精選作品 <span class="opacity-50 font-normal">Selected Works</span><span class="material-symbols-outlined transition-transform duration-200" id="works-chevron" style="font-size:16px;">expand_more</span>
-  </button>
-  <div class="absolute top-full left-0 mt-3 w-80 bg-surface/95 backdrop-blur-xl border border-outline-variant/30 rounded-xl shadow-lg opacity-0 invisible -translate-y-2 z-50" id="works-dropdown">
-    <div class="p-3 space-y-1">
-      <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">產品基礎架構 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">CMS 架構：行為與互動層級</span>
+
+<!-- ════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-editorial-border/60">
+  <div class="flex justify-between items-center px-6 md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+    <a class="font-headline-sm text-headline-sm tracking-widest text-primary font-playfair" href="index.html">TAKUMI</a>
+
+    <!-- Desktop nav -->
+    <div class="hidden md:flex items-center gap-10">
+      <!-- Works Dropdown -->
+      <div class="relative" id="works-nav">
+        <button class="font-label-md text-label-md text-primary flex items-center gap-1 focus:outline-none font-dm tracking-wider uppercase" id="works-btn">
+          精選作品 <span class="opacity-40 font-normal text-xs ml-1">Works</span>
+          <span class="material-symbols-outlined transition-transform duration-200" id="works-chevron" style="font-size:14px;">expand_more</span>
+        </button>
+        <div class="absolute top-full left-0 mt-4 w-80 bg-surface/98 backdrop-blur-xl border border-editorial-border rounded-xl shadow-lg opacity-0 invisible -translate-y-2 transition-all duration-200 z-50" id="works-dropdown">
+          <div class="p-3 space-y-1">
+            <a href="selected_works.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+              <span class="font-dm text-[11px] font-medium text-secondary mb-1 uppercase tracking-wider">Medical SaaS · 2024</span>
+              <span class="font-noto-tc text-sm text-on-surface group-hover:text-primary transition-colors">多角色權限系統重設計</span>
+            </a>
+            <div class="h-px bg-editorial-border mx-4"></div>
+            <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+              <span class="font-dm text-[11px] font-medium text-secondary mb-1 uppercase tracking-wider">招募平台 · 2025</span>
+              <span class="font-noto-tc text-sm text-on-surface group-hover:text-primary transition-colors">高端房仲招募前台設計</span>
+            </a>
+            <div class="h-px bg-editorial-border mx-4"></div>
+            <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
+              <span class="font-dm text-[11px] font-medium text-secondary mb-1 uppercase tracking-wider">Design System · 2024</span>
+              <span class="font-noto-tc text-sm text-on-surface group-hover:text-primary transition-colors">企業級跨平台設計系統</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a class="font-dm font-medium text-[13px] tracking-wider uppercase text-on-surface-variant hover:text-primary transition-colors" href="methodology.html">
+        方法論 <span class="opacity-40 font-normal normal-case text-xs ml-0.5">Method</span>
       </a>
-      <div class="h-px bg-outline-variant/40 mx-4"></div>
-      <a href="brand_identity_1.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">策略與遠景 · 2023</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：美學直覺</span>
+      <a class="font-dm font-medium text-[13px] tracking-wider uppercase text-on-surface-variant hover:text-primary transition-colors" href="about.html">
+        關於 <span class="opacity-40 font-normal normal-case text-xs ml-0.5">About</span>
       </a>
-      <div class="h-px bg-outline-variant/40 mx-4"></div>
-      <a href="brand_identity_2.html" class="flex flex-col px-4 py-3 rounded-lg hover:bg-surface-container transition-colors group">
-        <span class="font-label-sm text-label-sm text-secondary mb-1 uppercase tracking-wider">視覺系統 · 2024</span>
-        <span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">品牌識別：精煉與演進</span>
+      <a class="inline-flex items-center gap-2 font-dm font-medium text-[13px] tracking-wider uppercase bg-primary text-on-primary px-6 py-2.5 rounded-full hover:bg-primary-container transition-all duration-300" href="mailto:sidney77chen@gmail.com">
+        聯絡 <span class="opacity-60 font-normal normal-case text-xs ml-0.5">Inquiry</span>
+      </a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="md:hidden text-primary" id="mobile-menu-btn">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="hidden md:hidden bg-surface/98 backdrop-blur-xl border-t border-editorial-border/40" id="mobile-menu">
+    <div class="px-6 py-8 space-y-5 max-w-container-max mx-auto">
+      <p class="font-dm text-[11px] font-medium text-secondary uppercase tracking-widest pb-1 border-b border-editorial-border">精選作品</p>
+      <a class="block font-noto-tc text-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— 多角色權限系統重設計</a>
+      <a class="block font-noto-tc text-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 高端房仲招募前台設計</a>
+      <a class="block font-noto-tc text-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 企業級跨平台設計系統</a>
+      <a class="block font-dm font-medium text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-1" href="methodology.html">設計方法論</a>
+      <a class="block font-dm font-medium text-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於我</a>
+      <a class="inline-block font-dm font-medium text-sm uppercase tracking-wider bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">聯絡諮詢</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-end pb-24 md:items-center pt-32 overflow-hidden">
+  <!-- Atmospheric mist blob -->
+  <div class="mist-blob absolute top-1/4 right-0 w-96 h-96 bg-primary-fixed -z-10"></div>
+  <div class="mist-blob absolute bottom-0 left-0 w-64 h-64 bg-secondary-fixed -z-10 opacity-20"></div>
+
+  <div class="px-6 md:px-margin-desktop w-full max-w-container-max mx-auto relative z-10">
+    <div class="max-w-5xl">
+
+      <!-- Eyebrow -->
+      <div class="reveal-on-scroll active mb-8">
+        <span class="inline-flex items-center gap-3 font-dm text-[11px] font-medium tracking-widest uppercase text-secondary">
+          <span class="w-8 h-px bg-secondary inline-block"></span>
+          Senior UI / UX Designer · Taipei
+        </span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="reveal-on-scroll active font-playfair text-4xl md:text-[62px] leading-none md:leading-[1.08] tracking-[-0.02em] text-primary mb-10">
+        讓品牌清晰，<br class="hidden md:block"/>讓設計說話。
+        <em class="block font-playfair italic font-normal text-2xl md:text-4xl text-on-surface-variant mt-4 tracking-normal leading-snug">
+          Where intent becomes interface.
+        </em>
+      </h1>
+
+      <!-- Meta row -->
+      <div class="reveal-on-scroll active flex flex-wrap gap-8 md:gap-16 items-start pt-4 border-t border-editorial-border">
+        <div>
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-on-surface-variant mb-1">Focus</p>
+          <p class="font-noto-tc text-base text-primary">產品思維 × 系統設計</p>
+        </div>
+        <div>
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-on-surface-variant mb-1">Philosophy</p>
+          <p class="font-noto-tc text-base text-primary">先想清楚，再動手</p>
+        </div>
+        <div>
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-on-surface-variant mb-1">Experience</p>
+          <p class="font-noto-tc text-base text-primary">4+ 年 B2B SaaS 產品設計</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     SELECTED WORKS — BENTO GRID
+════════════════════════════════════════════════ -->
+<section class="py-section-gap" id="projects">
+  <div class="px-6 md:px-margin-desktop w-full max-w-container-max mx-auto">
+
+    <!-- Section header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6 reveal-on-scroll">
+      <div>
+        <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-secondary mb-3 flex items-center gap-3">
+          <span class="w-6 h-px bg-secondary inline-block"></span>Selected Works
+        </p>
+        <h2 class="font-playfair text-3xl md:text-[48px] leading-tight text-primary">
+          精選作品
+          <span class="opacity-30 italic font-normal text-2xl md:text-3xl ml-3">Archive</span>
+        </h2>
+      </div>
+      <p class="font-noto-tc text-sm md:text-base text-on-surface-variant max-w-sm leading-relaxed">
+        系統性干預的精選檔案。每個項目都代表了策略抽象與觸覺執行之間的橋樑。
+      </p>
+    </div>
+
+    <!-- ── BENTO GRID ───────────────────────────────── -->
+    <div class="bento-grid">
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  CASE STUDY 01 — LARGE FEATURED CELL     ║
+           ║  Medical SaaS / Multi-role Permission     ║
+           ║  PASSWORD GATED via Alpine.js             ║
+           ╚══════════════════════════════════════════╝ -->
+      <div
+        class="bento-cell-lg bento-card reveal-on-scroll relative rounded-2xl border border-editorial-border overflow-hidden bg-surface-container-lowest group"
+        x-data="{
+          locked: !window.TakumiUnlock.isUnlocked('case01'),
+          password: '',
+          error: false,
+          shake: false,
+          attempt() {
+            if (window.TakumiUnlock.try('case01', this.password)) {
+              this.locked = false;
+              this.error  = false;
+              window.TakumiUnlock.syncNav();
+            } else {
+              this.error  = true;
+              this.shake  = true;
+              this.password = '';
+              setTimeout(() => this.shake = false, 600);
+            }
+          }
+        }"
+      >
+        <!-- Case study content (behind gate) -->
+        <a href="selected_works.html" class="block">
+          <!-- Image area -->
+          <div class="bento-img-wrap aspect-[16/9] bg-primary-container relative">
+            <img
+              src="public/case-studies/case-01/01-hero-clinic-home.png"
+              alt="兒童成長骨科醫療資訊系統 — 診所候診與掛號中心首頁"
+              loading="lazy"
+              class="w-full h-full object-cover opacity-75"
+            />
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent"></div>
+            <!-- Hover CTA -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/20">
+              <span class="bg-surface/90 text-primary px-8 py-3 rounded-full font-dm font-medium text-sm uppercase tracking-wider backdrop-blur-sm">
+                查看案例
+              </span>
+            </div>
+          </div>
+
+          <!-- Text area -->
+          <div class="p-8 space-y-4">
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="chip bg-surface-container text-secondary border border-editorial-border">Product Design</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">SaaS · B2B</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">2024</span>
+            </div>
+            <h3 class="font-playfair text-2xl md:text-3xl text-primary leading-tight">
+              醫療後台平台 — 多角色權限系統重設計
+            </h3>
+            <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed max-w-2xl">
+              在高壓力、高複雜度的醫療環境中，原系統龐雜的資訊密度讓使用者在第一時間無法定位關鍵行動。
+              透過漸進式揭露（Progressive Disclosure）和視覺層級重組，設計了分階段／即時到位層的新架構，
+              大幅降低認知負擔，並成功縮短 40% 的高頻操作流程。
+            </p>
+
+            <!-- Outcome stats row -->
+            <div class="flex flex-wrap gap-8 pt-4 border-t border-editorial-border">
+              <div>
+                <p class="font-dm font-medium text-xl text-primary">40%</p>
+                <p class="font-dm text-[11px] uppercase tracking-wider text-on-surface-variant mt-0.5">操作時間縮短</p>
+              </div>
+              <div>
+                <p class="font-dm font-medium text-xl text-primary">3 mo.</p>
+                <p class="font-dm text-[11px] uppercase tracking-wider text-on-surface-variant mt-0.5">Project Duration</p>
+              </div>
+              <div>
+                <p class="font-dm font-medium text-xl text-primary">1 PM · 2 RD</p>
+                <p class="font-dm text-[11px] uppercase tracking-wider text-on-surface-variant mt-0.5">Team</p>
+              </div>
+              <div class="flex items-end ml-auto">
+                <span class="font-dm text-sm text-secondary flex items-center gap-1 group-hover:gap-2 transition-all duration-300">
+                  View Case Study <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── PASSWORD GATE OVERLAY ────────────────── -->
+        <div
+          x-show="locked"
+          x-cloak
+          class="gate-overlay absolute inset-0 flex flex-col items-center justify-center p-8 z-20"
+        >
+          <div class="w-full max-w-sm text-center space-y-6">
+            <!-- Lock icon -->
+            <div class="w-14 h-14 rounded-2xl bg-surface border border-editorial-border flex items-center justify-center mx-auto">
+              <span class="material-symbols-outlined text-on-surface-variant" style="font-size:22px;">lock</span>
+            </div>
+
+            <!-- Label -->
+            <div>
+              <p class="font-dm font-medium text-[11px] uppercase tracking-widest text-secondary mb-2">Private Work</p>
+              <h3 class="font-playfair text-2xl text-primary mb-2">醫療後台平台重設計</h3>
+              <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed">
+                此案例包含受 NDA 保護的設計細節。<br/>請輸入密碼以繼續閱覽完整內容。
+              </p>
+            </div>
+
+            <!-- Input row -->
+            <form @submit.prevent="attempt()" class="space-y-3">
+              <div :class="shake ? 'animate-[wiggle_0.5s_ease]' : ''">
+                <input
+                  x-model="password"
+                  type="password"
+                  placeholder="Enter password"
+                  class="gate-input w-full bg-surface border border-editorial-border rounded-lg px-4 py-3 font-dm text-sm text-on-surface placeholder-on-surface-variant/40 focus:ring-0 transition-colors"
+                  autocomplete="off"
+                />
+                <p x-show="error" x-cloak class="font-dm text-xs text-red-500 mt-1.5 text-left">
+                  密碼錯誤，請再試一次。
+                </p>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-on-primary rounded-lg py-3 font-dm font-medium text-sm uppercase tracking-wider hover:bg-primary-container transition-colors duration-200"
+              >
+                解鎖案例 Unlock
+              </button>
+            </form>
+
+            <!-- Hint -->
+            <p class="font-dm text-[10px] text-on-surface-variant/50 uppercase tracking-wider">
+              如需檢視完整案例，請來信向設計師索取密碼
+            </p>
+          </div>
+        </div>
+
+      </div><!-- end bento-cell-lg -->
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  SIDEBAR — SKILLS & PROFILE INFO         ║
+           ╚══════════════════════════════════════════╝ -->
+      <div class="bento-cell-sm bento-card reveal-on-scroll delay-100 rounded-2xl border border-editorial-border overflow-hidden bg-surface-container-lowest flex flex-col">
+
+        <!-- Profile header -->
+        <div class="p-8 border-b border-editorial-border space-y-4">
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-secondary">Designer Profile</p>
+          <h3 class="font-playfair text-2xl text-primary">Sidney Chen</h3>
+          <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed">
+            專注 B2B SaaS 產品設計與設計系統建構。
+            相信每一個設計決策都應源於對系統本質的理解，而非視覺偏好。
+          </p>
+        </div>
+
+        <!-- Skills grid -->
+        <div class="p-8 space-y-5 flex-1">
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-on-surface-variant">Core Capabilities</p>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="font-noto-tc text-sm text-on-surface">資訊架構 IA</span>
+                <span class="font-dm text-xs text-secondary">Principal</span>
+              </div>
+              <div class="h-px bg-editorial-border relative">
+                <div class="h-px bg-primary absolute left-0 top-0" style="width:90%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="font-noto-tc text-sm text-on-surface">UI 系統設計</span>
+                <span class="font-dm text-xs text-secondary">Principal</span>
+              </div>
+              <div class="h-px bg-editorial-border relative">
+                <div class="h-px bg-primary absolute left-0 top-0" style="width:88%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="font-noto-tc text-sm text-on-surface">Design System</span>
+                <span class="font-dm text-xs text-secondary">Senior</span>
+              </div>
+              <div class="h-px bg-editorial-border relative">
+                <div class="h-px bg-primary absolute left-0 top-0" style="width:82%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="font-noto-tc text-sm text-on-surface">Front-end RWD</span>
+                <span class="font-dm text-xs text-secondary">Senior</span>
+              </div>
+              <div class="h-px bg-editorial-border relative">
+                <div class="h-px bg-primary absolute left-0 top-0" style="width:75%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between items-center mb-1.5">
+                <span class="font-noto-tc text-sm text-on-surface">使用者研究 UX</span>
+                <span class="font-dm text-xs text-secondary">Mid</span>
+              </div>
+              <div class="h-px bg-editorial-border relative">
+                <div class="h-px bg-secondary/60 absolute left-0 top-0" style="width:65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools footer -->
+        <div class="px-8 pb-8">
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-on-surface-variant mb-3">Tools</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Figma</span>
+            <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Tailwind</span>
+            <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">HTML/CSS</span>
+            <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Notion</span>
+            <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">FigJam</span>
+          </div>
+        </div>
+
+      </div><!-- end bento-cell-sm -->
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  CASE STUDY 02 — Real Estate Platform    ║
+           ║  Open access, hover zoom                  ║
+           ╚══════════════════════════════════════════╝ -->
+      <div
+        class="bento-cell-half bento-card reveal-on-scroll delay-100 relative rounded-2xl border border-editorial-border overflow-hidden bg-surface-container-lowest group flex flex-col"
+        x-data="{
+          locked: !window.TakumiUnlock.isUnlocked('case02'),
+          password: '',
+          error: false,
+          shake: false,
+          attempt() {
+            if (window.TakumiUnlock.try('case02', this.password)) {
+              this.locked = false;
+              this.error  = false;
+              window.TakumiUnlock.syncNav();
+            } else {
+              this.error  = true;
+              this.shake  = true;
+              this.password = '';
+              setTimeout(() => this.shake = false, 600);
+            }
+          }
+        }"
+      >
+        <a href="brand_identity_1.html" class="flex flex-col h-full">
+          <!-- Image -->
+          <div class="bento-img-wrap aspect-[4/3] bg-surface-container-high relative">
+            <img
+              src="public/case-studies/case-02/hero.png"
+              alt="高端房仲招募前台網站設計 — 首頁主視覺"
+              loading="lazy"
+              class="w-full h-full object-cover opacity-85"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="chip bg-surface/90 text-primary border border-editorial-border/60 backdrop-blur-sm">Brand Experience</span>
+            </div>
+            <!-- Arrow indicator -->
+            <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-surface/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-primary" style="font-size:16px;">arrow_forward</span>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="p-6 flex-1 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class="font-dm text-[11px] uppercase tracking-widest font-medium text-secondary">招募平台 · 2025</span>
+              <span class="font-dm text-[11px] text-on-surface-variant">UI Designer</span>
+            </div>
+            <h3 class="font-playfair text-xl md:text-2xl text-primary leading-tight">
+              高端房仲招募<br/>前台網站設計
+            </h3>
+            <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed flex-1">
+              網站的設計目標不只是好看，而是在第一秒建立信任感，讓使用者願意繼續下一步行動。
+              透過視覺品牌定位、首頁資料架構整合與用戶轉化路徑優化，打造兼具質感與轉化率的招募平台。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-editorial-border">
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Visual Brand</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Conversion UX</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">RWD</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ── PASSWORD GATE OVERLAY ────────────────── -->
+        <div
+          x-show="locked"
+          x-cloak
+          class="gate-overlay absolute inset-0 flex flex-col items-center justify-center p-6 z-20"
+        >
+          <div class="w-full max-w-xs text-center space-y-5">
+            <div class="w-12 h-12 rounded-2xl bg-surface border border-editorial-border flex items-center justify-center mx-auto">
+              <span class="material-symbols-outlined text-on-surface-variant" style="font-size:20px;">lock</span>
+            </div>
+            <div>
+              <p class="font-dm font-medium text-[11px] uppercase tracking-widest text-secondary mb-2">Private Work</p>
+              <h3 class="font-playfair text-xl text-primary mb-2">高端房仲招募平台</h3>
+              <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed">
+                此案例包含客戶機密設計細節。<br/>請輸入密碼以繼續閱覽。
+              </p>
+            </div>
+            <form @submit.prevent="attempt()" class="space-y-3">
+              <div :class="shake ? 'animate-[wiggle_0.5s_ease]' : ''">
+                <input
+                  x-model="password"
+                  type="password"
+                  placeholder="Enter password"
+                  class="gate-input w-full bg-surface border border-editorial-border rounded-lg px-4 py-3 font-dm text-sm text-on-surface placeholder-on-surface-variant/40 focus:ring-0 transition-colors"
+                  autocomplete="off"
+                />
+                <p x-show="error" x-cloak class="font-dm text-xs text-red-500 mt-1.5 text-left">
+                  密碼錯誤，請再試一次。
+                </p>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-on-primary rounded-lg py-3 font-dm font-medium text-sm uppercase tracking-wider hover:bg-primary-container transition-colors duration-200"
+              >
+                解鎖案例 Unlock
+              </button>
+            </form>
+            <p class="font-dm text-[10px] text-on-surface-variant/50 uppercase tracking-wider">
+              如需檢視完整案例，請來信向設計師索取密碼
+            </p>
+          </div>
+        </div>
+
+      </div><!-- end case 02 -->
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  CASE STUDY 03 — Design System           ║
+           ║  Open access, hover zoom                  ║
+           ╚══════════════════════════════════════════╝ -->
+      <div class="bento-cell-half bento-card reveal-on-scroll delay-200 rounded-2xl border border-editorial-border overflow-hidden bg-surface-container-lowest group flex flex-col">
+        <a href="brand_identity_2.html" class="flex flex-col h-full">
+          <!-- Image -->
+          <div class="bento-img-wrap aspect-[4/3] bg-surface-container-low relative">
+            <img
+              src="public/case-studies/case-03/design-system-variants.png"
+              alt="設計系統方法論 — Figma Variants 元件防呆控制面板"
+              loading="lazy"
+              class="w-full h-full object-cover opacity-95"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="chip bg-surface/90 text-primary border border-editorial-border/60 backdrop-blur-sm">System Thinking</span>
+            </div>
+            <div class="absolute bottom-4 right-4 w-9 h-9 rounded-full bg-surface/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0 backdrop-blur-sm">
+              <span class="material-symbols-outlined text-primary" style="font-size:16px;">arrow_forward</span>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="p-6 flex-1 flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <span class="font-dm text-[11px] uppercase tracking-widest font-medium text-secondary">DesignOps · 2026</span>
+              <span class="font-dm text-[11px] text-on-surface-variant">設計主管</span>
+            </div>
+            <h3 class="font-playfair text-xl md:text-2xl text-primary leading-tight">
+              設計系統思維<br/>駕馭高客製專案
+            </h3>
+            <p class="font-noto-tc text-sm text-on-surface-variant leading-relaxed flex-1">
+              這些專案客製化程度極高，難以沉澱成一套可直接複用的通用資產。
+              但我把設計系統的核心紀律——Variants 元件防呆與 Token 語意化命名——
+              內化進每一個案子，讓交接溝通成本降低 30%。
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 border-t border-editorial-border">
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Methodology</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Design Tokens</span>
+              <span class="chip bg-surface-container text-on-surface-variant border border-editorial-border">Handoff</span>
+            </div>
+          </div>
+        </a>
+      </div><!-- end case 03 -->
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  METRICS TICKER / EDITORIAL QUOTE        ║
+           ╚══════════════════════════════════════════╝ -->
+      <div class="bento-cell-lg bento-card reveal-on-scroll delay-100 rounded-2xl border border-editorial-border bg-primary p-8 md:p-12 flex flex-col justify-between min-h-[220px]">
+        <blockquote class="font-playfair italic text-xl md:text-2xl text-on-primary leading-relaxed max-w-2xl">
+          "每個元件、像素和轉場，都必須在系統中證明其存在的合理性。"
+        </blockquote>
+        <div class="flex flex-wrap gap-12 mt-8 pt-8 border-t border-on-primary/10">
+          <div>
+            <p class="font-dm font-medium text-2xl md:text-3xl text-on-primary">4+</p>
+            <p class="font-dm text-[11px] uppercase tracking-wider text-on-primary/50 mt-0.5">Years Experience</p>
+          </div>
+          <div>
+            <p class="font-dm font-medium text-2xl md:text-3xl text-on-primary">12+</p>
+            <p class="font-dm text-[11px] uppercase tracking-wider text-on-primary/50 mt-0.5">Products Shipped</p>
+          </div>
+          <div>
+            <p class="font-dm font-medium text-2xl md:text-3xl text-on-primary">30%</p>
+            <p class="font-dm text-[11px] uppercase tracking-wider text-on-primary/50 mt-0.5">Dev Cost Reduced</p>
+          </div>
+          <div>
+            <p class="font-dm font-medium text-2xl md:text-3xl text-on-primary">100%</p>
+            <p class="font-dm text-[11px] uppercase tracking-wider text-on-primary/50 mt-0.5">Cross-platform Consistency</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ╔══════════════════════════════════════════╗
+           ║  PROCESS SNAPSHOT                        ║
+           ╚══════════════════════════════════════════╝ -->
+      <div class="bento-cell-sm bento-card reveal-on-scroll delay-200 rounded-2xl border border-editorial-border bg-surface-container-lowest p-8 flex flex-col justify-between min-h-[220px]">
+        <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-secondary">Design Process</p>
+        <div class="space-y-4 mt-4">
+          <div class="flex items-center gap-4">
+            <span class="font-dm font-medium text-[11px] text-on-surface-variant w-4">01</span>
+            <div class="flex-1 h-px bg-editorial-border relative">
+              <div class="h-px bg-primary absolute left-0 top-0 w-full"></div>
+            </div>
+            <span class="font-noto-tc text-sm text-on-surface">觀察 Observe</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="font-dm font-medium text-[11px] text-on-surface-variant w-4">02</span>
+            <div class="flex-1 h-px bg-editorial-border relative">
+              <div class="h-px bg-primary absolute left-0 top-0" style="width:85%"></div>
+            </div>
+            <span class="font-noto-tc text-sm text-on-surface">定義 Define</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="font-dm font-medium text-[11px] text-on-surface-variant w-4">03</span>
+            <div class="flex-1 h-px bg-editorial-border relative">
+              <div class="h-px bg-secondary/60 absolute left-0 top-0" style="width:75%"></div>
+            </div>
+            <span class="font-noto-tc text-sm text-on-surface">設計 Design</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="font-dm font-medium text-[11px] text-on-surface-variant w-4">04</span>
+            <div class="flex-1 h-px bg-editorial-border relative">
+              <div class="h-px bg-secondary/40 absolute left-0 top-0" style="width:60%"></div>
+            </div>
+            <span class="font-noto-tc text-sm text-on-surface">交付 Deliver</span>
+          </div>
+        </div>
+        <a href="methodology.html" class="inline-flex items-center gap-2 font-dm text-xs font-medium uppercase tracking-wider text-secondary mt-8 hover:gap-3 transition-all duration-300">
+          View Full Methodology <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span>
+        </a>
+      </div>
+
+    </div><!-- end bento-grid -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     METHODOLOGY STRIP
+════════════════════════════════════════════════ -->
+<section class="py-section-gap bg-surface-container-low border-y border-editorial-border">
+  <div class="px-6 md:px-margin-desktop w-full max-w-container-max mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 items-center">
+
+      <!-- Left: text -->
+      <div class="reveal-on-scroll space-y-10">
+        <div>
+          <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-secondary mb-4 flex items-center gap-3">
+            <span class="w-6 h-px bg-secondary inline-block"></span>The Way of Craft
+          </p>
+          <h2 class="font-playfair text-3xl md:text-[42px] leading-tight text-primary">
+            職人之道
+          </h2>
+        </div>
+
+        <div class="space-y-10">
+          <div class="group border-b border-editorial-border pb-8">
+            <p class="font-dm font-medium text-[11px] uppercase tracking-widest text-secondary mb-2">01. Observation 觀察</p>
+            <p class="font-noto-tc text-base text-on-surface leading-relaxed">在應用第一道結構之前，先看見混亂中隱藏的模式。不急著解決問題，先理解問題從哪裡來。</p>
+          </div>
+          <div class="group border-b border-editorial-border pb-8">
+            <p class="font-dm font-medium text-[11px] uppercase tracking-widest text-secondary mb-2">02. Intentionality 意圖</p>
+            <p class="font-noto-tc text-base text-on-surface leading-relaxed">每個組件、像素和轉場，都必須在系統中證明其存在的合理性。設計是減法，不是加法。</p>
+          </div>
+          <div class="group">
+            <p class="font-dm font-medium text-[11px] uppercase tracking-widest text-secondary mb-2">03. Resilience 韌性</p>
+            <p class="font-noto-tc text-base text-on-surface leading-relaxed">設計隨時間優雅老化的系統，在不失靈魂的前提下適應變化。系統思維比單一頁面更重要。</p>
+          </div>
+        </div>
+
+        <a href="methodology.html" class="inline-flex items-center gap-3 font-dm font-medium text-sm uppercase tracking-wider text-primary border border-editorial-border px-6 py-3 rounded-full hover:bg-surface-container transition-colors duration-300">
+          閱讀完整方法論 <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Right: decorative -->
+      <div class="hidden md:flex items-center justify-center reveal-on-scroll delay-100">
+        <div class="relative w-72 h-72">
+          <!-- Outer ring -->
+          <div class="absolute inset-0 rounded-full border border-editorial-border"></div>
+          <!-- Middle ring -->
+          <div class="absolute inset-8 rounded-full border border-primary/10"></div>
+          <!-- Inner circle -->
+          <div class="absolute inset-16 rounded-full bg-primary-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-on-primary-container opacity-40" style="font-size:40px;">eco</span>
+          </div>
+          <!-- Orbiting dot -->
+          <div class="absolute top-6 right-6 w-3 h-3 rounded-full bg-secondary/60"></div>
+          <div class="absolute bottom-12 left-4 w-2 h-2 rounded-full bg-primary/30"></div>
+          <!-- Labels around ring -->
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 font-dm text-[10px] uppercase tracking-widest text-on-surface-variant">Observe</span>
+          <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 font-dm text-[10px] uppercase tracking-widest text-on-surface-variant">Deliver</span>
+          <span class="absolute top-1/2 -right-8 -translate-y-1/2 font-dm text-[10px] uppercase tracking-widest text-on-surface-variant">Design</span>
+          <span class="absolute top-1/2 -left-8 -translate-y-1/2 font-dm text-[10px] uppercase tracking-widest text-on-surface-variant">Define</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════════════ -->
+<section class="max-w-container-max mx-auto px-6 md:px-margin-desktop pb-section-gap pt-24">
+  <div class="reveal-on-scroll bg-surface-container-highest rounded-2xl border border-editorial-border p-10 md:p-16 text-center">
+    <p class="font-dm text-[11px] font-medium uppercase tracking-widest text-secondary mb-6 flex items-center justify-center gap-3">
+      <span class="w-6 h-px bg-secondary inline-block"></span>Let's Work Together<span class="w-6 h-px bg-secondary inline-block"></span>
+    </p>
+    <h2 class="font-playfair text-3xl md:text-[42px] leading-tight text-primary mb-6">
+      我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。
+    </h2>
+    <p class="font-noto-tc text-base text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+      如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+      <a
+        class="inline-flex items-center gap-3 bg-primary text-on-primary px-10 py-4 rounded-full font-dm font-medium text-sm uppercase tracking-wider hover:bg-primary-container transition-all duration-300 hover:scale-[1.02]"
+        href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。"
+      >
+        開始對話 <span class="material-symbols-outlined">arrow_forward</span>
+      </a>
+      <a
+        class="inline-flex items-center gap-2 border border-editorial-border text-on-surface px-8 py-4 rounded-full font-dm font-medium text-sm uppercase tracking-wider hover:border-primary hover:text-primary transition-all duration-300"
+        href="about.html"
+      >
+        了解更多
       </a>
     </div>
   </div>
-</div>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="methodology.html">設計方法論 <span class="opacity-50 font-normal ml-1">Methodology</span></a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">關於我 <span class="opacity-50 font-normal ml-1">About</span></a>
-<a class="inline-flex items-center gap-2 font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">
-  聯絡諮詢 <span class="opacity-70 font-normal ml-1">Inquiry</span>
-</a>
-</div>
-<button class="md:hidden text-primary" id="mobile-menu-btn">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-<!-- Mobile Menu -->
-<div class="hidden md:hidden bg-surface/95 backdrop-blur-xl border-t border-outline-variant/20" id="mobile-menu">
-<div class="px-6 py-8 space-y-4 max-w-container-max mx-auto">
-<div class="font-label-md text-label-md text-primary border-b border-primary/20 pb-2">精選作品</div>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="selected_works.html">— CMS 架構：行為與互動層級</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_1.html">— 品牌識別：美學直覺</a>
-<a class="block font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors py-1 pl-4" href="brand_identity_2.html">— 品牌識別：精煉與演進</a>
-<a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="methodology.html">設計方法論</a>
-<a class="block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1" href="about.html">關於我</a>
-<a class="inline-block font-label-md text-label-md bg-primary text-on-primary px-6 py-3 rounded-full hover:bg-primary-container transition-all" href="mailto:sidney77chen@gmail.com">聯絡諮詢</a>
-</div>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-32 overflow-hidden">
-<div class="absolute inset-0 organic-texture pointer-events-none"></div>
-<div class="px-margin-desktop w-full max-w-container-max mx-auto relative z-10">
-<div class="max-w-4xl space-y-12">
-<div class="reveal-on-scroll active space-y-4">
-<span class="font-label-md text-label-md text-secondary tracking-widest uppercase inline-block border-l-2 border-secondary pl-4">Designer &amp; Strategist</span>
-<h1 class="font-headline-display text-headline-display text-primary leading-tight">
-                        讓品牌清晰，讓設計說話。
-                    </h1>
-</div>
-<div class="reveal-on-scroll active flex flex-wrap gap-12 items-center pt-8">
-<div class="flex flex-col gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Focus</span>
-<span class="font-body-md text-body-md text-primary">品牌 × 系統設計</span>
-</div>
-<div class="flex flex-col gap-1">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Philosophy</span>
-<span class="font-body-md text-body-md text-primary">先想清楚，再動手</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Atmospheric Stream Element -->
-<div class="absolute bottom-0 right-0 w-1/3 h-2/3 -z-10 opacity-40 blur-3xl translate-x-1/4 translate-y-1/4">
-<div class="w-full h-full bg-primary-fixed rounded-full"></div>
-</div>
 </section>
-<!-- Selected Projects -->
-<section class="py-section-gap" id="projects">
-<div class="px-margin-desktop w-full max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-<div class="max-w-xl">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">精選作品 <span class="opacity-40 font-normal italic ml-2">Selected Works</span></h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                        系統性干預的精選檔案。每個項目都代表了策略抽象與觸覺執行之間的橋樑。
-                    </p>
-</div>
-<span class="font-label-md text-label-md text-secondary border-b border-secondary/20 pb-1 cursor-pointer">Archive 2020—2024</span>
-</div>
-<!-- Projects Grid -->
-<div class="space-y-section-gap">
-<!-- Project 1 -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center reveal-on-scroll">
-<div class="md:col-span-7 aspect-[16/10] bg-surface-container overflow-hidden rounded-xl group relative">
-<img alt="CMS Architecture System Design" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="A macro photograph of a de-identified, highly structured digital interface featuring blurred UI elements and complex architectural diagrams. The color palette is composed of soft moss greens and deep charcoal grays, suggesting a sense of calm precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBolDofZBFXSEgsk1tja2pe1_r77pl4L_I0UvbrnmGqq0MVac6qjSX5E1fsVFQE94UiZhOC0TplU3UR_zpIsUTkueX3w1NoIJ1mqQi8ACVP5-PV0SRdfDBF_LXBCwLgyG7ahZdpsIORaKvh2OnkG26JPZV-tbsfTrZmMH3-ltDHnFVj3neWwIQgBVoQ56Tt2DaK7Yxp9BWT-sXoevaAj5_ZDsm69vkoNLeptBMq-FnKJvMP97higLXNuqTp6qhh8x8sunyumfwG7CU"/>
-<a class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center" href="selected_works.html">
-<span class="bg-surface text-primary px-8 py-3 rounded-full font-label-md text-label-md">查看案例研究</span>
-</a>
-</div>
-<div class="md:col-span-5 md:pl-12 space-y-6">
-<span class="font-label-sm text-label-sm text-secondary px-3 py-1 bg-secondary-fixed rounded-lg">產品基礎架構</span>
-<h3 class="font-headline-md text-headline-md text-primary">CMS 架構：行為與互動層級</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                            通過對結構精準度的關注，重新定義數據錄入體驗。該項目涉及 UI 的深度去識別化，以優先考慮邏輯流，成功為企業利益相關者減少了 40% 的認知負荷。
-                        </p>
-<ul class="space-y-3 pt-4">
-<li class="flex items-center gap-3 text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-primary text-sm">filter_vintage</span> 行為分析
-                            </li>
-<li class="flex items-center gap-3 text-on-surface-variant font-label-md text-label-md">
-<span class="material-symbols-outlined text-primary text-sm">filter_vintage</span> 系統化 UI 模式
-                            </li>
-</ul>
-</div>
-</div>
-<!-- Project 2 & 3 -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-32">
-<!-- Project 2 -->
-<div class="space-y-8 reveal-on-scroll" style="transition-delay: 100ms;">
-<a href="brand_identity_1.html" class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden group block">
-<img alt="Brand Identity Strategy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5fzOA1x9yuqj5Ck9onMHdQ801qxDATt9FLpzVrUUovYeDvfsmqoW_BfnDy0XTG7bL0SIV4jsA7NUsvquzRS7YEDvcX4bZxpyClpKfUeWvnAhJtGXme-Td_ewSvjncIQjLPGyxIWCEgqNEXcXP16ZMVDIkx-PqfuCLDeV_PvAk63AWM4N-kxyAWVsI0EP7ORoavsQM26Fo2evaMrwcVkoD1vwv451sh5W3fBSJv72Rl1it-91DeYbE2XRbaOTRhQtIBYQqGYyAiwQ"/>
-</a>
-<div class="space-y-4">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-secondary px-3 py-1 bg-secondary-fixed rounded-lg">策略與遠景</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">2023</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">品牌識別：美學直覺</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                                為精品工作室量身打造的策略引導識別項目。通過迭代的利益相關者協調，彌合了創始人抽象價值觀與具體視覺語言之間的差距。
-                            </p>
-</div>
-</div>
-<!-- Project 3 -->
-<div class="space-y-8 mt-24 reveal-on-scroll" style="transition-delay: 200ms;">
-<a href="brand_identity_2.html" class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden group block">
-<img alt="Brand Refinement Showcase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaV-OaTC7Y3s1DtkHAZUja4g2WmhV1XZ89iu5UASwxpyYsX-tyoWmx0nVpyS5YYji4OswkpoqhqP5UgFC1mKFXx9PQpOrxTqebSsuEI4Mymv-le9qFhoG9ugczO74VvyTdwRPxD7Rgim1Og5sbVhKAhGI_m5eGL1rQhq4cKnLhZfclYIYpMfddEZ0i_BEBlssRYVHgkuiqDVKEasewfljhsjRtj4B9-pH9AawQ-rwaVl-vnIBh2pm1MBFaKJovsa2ITuK6Y7CQBR8"/>
-</a>
-<div class="space-y-4">
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-secondary px-3 py-1 bg-secondary-fixed rounded-lg">視覺系統</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">2024</span>
-</div>
-<h3 class="font-headline-sm text-headline-sm text-primary">品牌識別：精煉與演進</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                                為現有品牌的廣度與穩定性進行擴展。專注於字體的一致性和模塊化設計系統，確保在所有物理與數位接觸點上維持優雅感。
-                            </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Methodology -->
-<section class="py-section-gap bg-surface-container-low relative">
-<div class="absolute inset-0 organic-texture opacity-[0.02]"></div>
-<div class="px-margin-desktop w-full max-w-container-max mx-auto relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-32">
-<div class="reveal-on-scroll">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-12">職人之道 <span class="opacity-40 font-normal ml-2">The Way of Craft.</span></h2>
-<div class="space-y-12">
-<div class="group">
-<h4 class="font-label-md text-label-md text-secondary mb-2 tracking-widest">01. 觀察 <span class="opacity-50 ml-1">OBSERVATION</span></h4>
-<p class="font-body-lg text-body-lg text-on-surface max-w-md">在應用第一道結構之前，先看見混亂中隱藏的模式。</p>
-</div>
-<div class="group">
-<h4 class="font-label-md text-label-md text-secondary mb-2 tracking-widest">02. 意圖 <span class="opacity-50 ml-1">INTENTIONALITY</span></h4>
-<p class="font-body-lg text-body-lg text-on-surface max-w-md">每個組件、像素和轉場，都必須在系統中證明其存在的合理性。</p>
-</div>
-<div class="group">
-<h4 class="font-label-md text-label-md text-secondary mb-2 tracking-widest">03. 韌性 <span class="opacity-50 ml-1">RESILIENCE</span></h4>
-<p class="font-body-lg text-body-lg text-on-surface max-w-md">設計隨時間優雅老化的系統，在不失靈魂的前提下適應變化。</p>
-</div>
-</div>
-</div>
-<div class="hidden md:block reveal-on-scroll">
-<div class="aspect-square bg-primary-container rounded-full flex items-center justify-center p-24">
-<div class="border border-on-primary-container/20 rounded-full w-full h-full flex items-center justify-center relative">
-<div class="w-1/2 h-1/2 border border-on-primary-container/40 rounded-full absolute animate-[pulse_4s_ease-in-out_infinite]"></div>
-<span class="material-symbols-outlined text-6xl text-on-primary-container opacity-40">eco</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="max-w-container-max mx-auto px-margin-desktop pb-section-gap">
-<div class="bg-surface-container-highest p-16 rounded-xl text-center">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-6">我在找的不是一份工作，<br/>而是一段長遠的夥伴關係。</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
-如果你重視設計的深度、相信工藝值得被認真對待——我們或許可以一起做些真正有意思的事。
-</p>
-<a class="inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-full font-label-md text-label-md hover:scale-105 transition-transform duration-300" href="mailto:sidney77chen@gmail.com?subject=合作夥伴洽談&body=你好，我在 TAKUMI 作品集看到你的作品，想進一步聊聊合作的可能性。">
-開始對話
-<span class="material-symbols-outlined">arrow_forward</span>
-</a>
-</div>
-</section>
+
 </main>
-<!-- Footer -->
-<footer class="w-full bg-surface-container-lowest pt-section-gap pb-12">
-<div class="max-w-container-max mx-auto px-margin-desktop border-t-[0.5px] border-outline-variant pt-12">
-<div class="flex flex-col md:flex-row justify-between items-start gap-12">
-<div class="space-y-4">
-<a class="font-headline-sm text-headline-sm text-primary tracking-widest block" href="index.html">TAKUMI</a>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">植根於意圖的設計夥伴關係。</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2025 工藝夥伴。保留一切權利。</p>
-</div>
-<div class="flex flex-wrap gap-12">
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">精選作品</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">CMS 架構</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">品牌識別：美學直覺</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">品牌識別：精煉與演進</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">導覽</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Connect</span>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer class="w-full bg-surface-container-lowest border-t border-editorial-border pt-16 pb-12">
+  <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-12">
+      <div class="space-y-4 max-w-xs">
+        <a class="font-playfair text-xl text-primary tracking-widest block" href="index.html">TAKUMI</a>
+        <p class="font-noto-tc text-sm text-on-surface-variant">植根於意圖的設計夥伴關係。</p>
+        <p class="font-dm text-[11px] text-on-surface-variant opacity-50 uppercase tracking-wider">© 2025 TAKUMI. All Rights Reserved.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-12">
+        <div class="flex flex-col gap-3">
+          <span class="font-dm text-[11px] font-medium text-secondary uppercase tracking-widest">精選作品</span>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="selected_works.html">多角色權限系統重設計</a>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_1.html">高端房仲招募平台</a>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="brand_identity_2.html">企業級設計系統</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-dm text-[11px] font-medium text-secondary uppercase tracking-widest">導覽</span>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="methodology.html">設計方法論</a>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="about.html">關於我</a>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="mailto:sidney77chen@gmail.com">聯繫合作</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <span class="font-dm text-[11px] font-medium text-secondary uppercase tracking-widest">Connect</span>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">LinkedIn</a>
+          <a class="font-noto-tc text-sm text-on-surface-variant hover:text-secondary transition-colors duration-300" href="#">Dribbble</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- ════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════ -->
 <script>
-    // Simple scroll reveal observer
-    const observerOptions = {
-        threshold: 0.1
-    };
+  /* ── Scroll reveal ────────────────────────────── */
+  const observer = new IntersectionObserver(
+    (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, observerOptions);
+  /* ── Nav shrink on scroll ─────────────────────── */
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('shadow-sm');
+      nav.querySelectorAll('.flex.justify-between').forEach(el => {
+        el.classList.add('py-4');
+        el.classList.remove('py-6');
+      });
+    } else {
+      nav.classList.remove('shadow-sm');
+      nav.querySelectorAll('.flex.justify-between').forEach(el => {
+        el.classList.remove('py-4');
+        el.classList.add('py-6');
+      });
+    }
+  }, { passive: true });
 
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-
-    // Navigation scroll effect
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('py-4', 'shadow-sm');
-            nav.classList.remove('py-8');
-        } else {
-            nav.classList.add('py-8');
-            nav.classList.remove('py-4', 'shadow-sm');
-        }
+  /* ── Works dropdown ───────────────────────────── */
+  const worksBtn      = document.getElementById('works-btn');
+  const worksDropdown = document.getElementById('works-dropdown');
+  const worksChevron  = document.getElementById('works-chevron');
+  if (worksBtn && worksDropdown) {
+    worksBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const isOpen = !worksDropdown.classList.contains('invisible');
+      worksDropdown.classList.toggle('opacity-0',     isOpen);
+      worksDropdown.classList.toggle('invisible',     isOpen);
+      worksDropdown.classList.toggle('-translate-y-2', isOpen);
+      worksChevron?.classList.toggle('rotate-180', !isOpen);
     });
+    document.addEventListener('click', () => {
+      worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+      worksChevron?.classList.remove('rotate-180');
+    });
+  }
 
-    // Works dropdown
-    const worksBtn = document.getElementById('works-btn');
-    const worksDropdown = document.getElementById('works-dropdown');
-    const worksChevron = document.getElementById('works-chevron');
-    if (worksBtn && worksDropdown) {
-        worksBtn.addEventListener('click', e => {
-            e.stopPropagation();
-            const isOpen = !worksDropdown.classList.contains('invisible');
-            worksDropdown.classList.toggle('opacity-0', isOpen);
-            worksDropdown.classList.toggle('invisible', isOpen);
-            worksDropdown.classList.toggle('-translate-y-2', isOpen);
-            worksChevron && worksChevron.classList.toggle('rotate-180', !isOpen);
-        });
-        document.addEventListener('click', () => {
-            worksDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
-            worksChevron && worksChevron.classList.remove('rotate-180');
-        });
-    }
-
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const icon = menuBtn.querySelector('.material-symbols-outlined');
-            icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
-        });
-    }
+  /* ── Mobile menu ──────────────────────────────── */
+  const menuBtn    = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('.material-symbols-outlined');
+      icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+    });
+  }
 </script>
-</body></html>
+
+<!-- Alpine wiggle keyframe (inline so no build tool needed) -->
+<style>
+  @keyframes wiggle {
+    0%,100% { transform: translateX(0); }
+    20%     { transform: translateX(-6px); }
+    40%     { transform: translateX(6px); }
+    60%     { transform: translateX(-4px); }
+    80%     { transform: translateX(4px); }
+  }
+</style>
+
+</body>
+</html>
