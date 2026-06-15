@@ -113,15 +113,94 @@
    Stage 2: Component styles
    ───────────────────────────────────────── */
 
-/* Bento card — subtle dual-layer shadow */
+/* ── Buttons ───────────────────────────── */
+
+/* Primary CTA — deep green pill */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.625rem 1.5rem;       /* 10px 24px */
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8125rem;           /* 13px */
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-container);
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Primary CTA — large variant (Hero / Footer CTA) */
+.btn-primary-lg {
+  padding: 1rem 2.5rem;           /* 16px 40px */
+  font-size: 0.875rem;            /* 14px */
+}
+
+/* Secondary — soft green pill */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-green-soft);
+  color: var(--color-primary);
+  border-radius: var(--radius-pill);
+  padding: 0.625rem 1.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: var(--color-primary-fixed);
+  transform: translateY(-1px);
+}
+
+/* Ghost — transparent with border */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.5rem;        /* 12px 24px */
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  background-color: var(--color-surface-container);
+  transform: translateY(-1px);
+}
+
+/* ── Bento card — subtle dual-layer shadow ── */
 .bento-card {
   box-shadow: 0 1px 4px rgba(0,0,0,0.06),
               0 8px 24px rgba(0,0,0,0.07);
-  transition: box-shadow 0.25s ease;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 .bento-card:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.09),
               0 16px 40px rgba(0,0,0,0.09);
+  transform: translateY(-2px);
 }
 
 /* Color utility overrides — Tailwind class → CSS variable */
