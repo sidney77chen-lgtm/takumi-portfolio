@@ -54,27 +54,20 @@
 
 **Google Fonts link (use this exact string):**
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 ```
 
 **Tailwind fontFamily mapping:**
 ```js
 fontFamily: {
-  display:           ["Libre Caslon Text"],
-  headline:          ["Libre Caslon Text"],
-  "headline-display": ["Libre Caslon Text", "PingFang TC", "serif"],
-  "headline-lg":     ["Libre Caslon Text", "PingFang TC", "serif"],
-  "headline-md":     ["Libre Caslon Text", "PingFang TC", "serif"],
-  "headline-sm":     ["Libre Caslon Text", "PingFang TC", "serif"],
-  body:              ["Hanken Grotesk"],
-  "body-lg":         ["Hanken Grotesk", "PingFang TC", "sans-serif"],
-  "body-md":         ["Hanken Grotesk", "PingFang TC", "sans-serif"],
-  label:             ["Hanken Grotesk"],
-  "label-md":        ["Hanken Grotesk", "PingFang TC", "sans-serif"],
-  "label-sm":        ["Hanken Grotesk", "PingFang TC", "sans-serif"],
+  playfair: ["Playfair Display", "serif"],        // 標題、引言、大字
+  dm:       ["DM Sans", "sans-serif"],            // UI 文字、標籤、導覽
+  "noto-tc": ["Noto Sans TC", "PingFang TC", "sans-serif"], // 中文內文
 }
 ```
+
+> ⚠️ 字型系統已於 2026-06 切換：Libre Caslon Text → Playfair Display，Hanken Grotesk → DM Sans，中文改用 Noto Sans TC。
 
 ---
 

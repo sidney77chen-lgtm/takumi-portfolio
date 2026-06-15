@@ -48,6 +48,51 @@
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
 
+  /* ─────────────────────────────────────────
+     Visual Design Language — 新增語意變數
+     參考：docs/visual-design-language.md
+     ───────────────────────────────────────── */
+
+  /* 綠色主軸（新） */
+  --color-green-deep:    #1F3D2A;   /* 備用深綠：CTA、強調、Logo（現行用 --color-primary） */
+  --color-green-mid:     #5A8A6B;   /* 中綠：accent、icon、hover */
+  --color-green-soft:    #D4E5D9;   /* 淡綠：卡片底色、tag */
+  --color-green-mist:    #EEF3EF;   /* 極淡綠：section 區隔背景 */
+
+  /* 中性色（新） */
+  --color-bg:            #FAFAF7;   /* 主背景備用（帶米黃，較現行 #f8faf8 偏暖） */
+  --color-surface-card:  #FFFFFF;   /* 卡片白底（避免與現行 --color-surface 撞名） */
+  --color-text-primary:  #1A1A1A;   /* 主文字別名（現行 --color-on-surface: #191c1b） */
+  --color-text-secondary:#5C5C5C;   /* 次要文字（現行 --color-on-surface-variant: #444843） */
+  --color-border:        #E8E8E5;   /* 邊框別名 */
+
+  /* 字級（新） */
+  --text-hero:    clamp(48px, 6vw, 88px);
+  --text-h1:      clamp(36px, 4vw, 56px);
+  --text-h2:      clamp(24px, 3vw, 36px);
+  --text-body:    16px;
+  --text-small:   14px;
+
+  /* 行高（新） */
+  --leading-tight:  1.1;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* 圓角（新，備用 — 不動 Tailwind config） */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --radius-pill: 999px;
+
+  /* 間距（新別名） */
+  --space-1:   8px;
+  --space-2:  16px;
+  --space-3:  24px;
+  --space-4:  32px;
+  --space-6:  48px;
+  --space-8:  64px;
+  --space-12: 96px;
+
   /* Typography */
   --font-size-display: 64px;
   --font-size-headline-lg: 48px;
@@ -62,6 +107,21 @@
   --spacing-section-gap: 128px;
   --spacing-margin-desktop: 64px;
   --spacing-gutter: 32px;
+}
+
+/* ─────────────────────────────────────────
+   Stage 2: Component styles
+   ───────────────────────────────────────── */
+
+/* Bento card — subtle dual-layer shadow */
+.bento-card {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06),
+              0 8px 24px rgba(0,0,0,0.07);
+  transition: box-shadow 0.25s ease;
+}
+.bento-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09),
+              0 16px 40px rgba(0,0,0,0.09);
 }
 
 /* Color utility overrides — Tailwind class → CSS variable */
