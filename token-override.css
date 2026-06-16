@@ -110,6 +110,23 @@
 }
 
 /* ─────────────────────────────────────────
+   Stage 3: Typography helpers
+   ───────────────────────────────────────── */
+
+.type-hero {
+  font-size: var(--text-hero);
+  line-height: var(--leading-tight);
+}
+.type-h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
+}
+.type-h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-tight);
+}
+
+/* ─────────────────────────────────────────
    Stage 2: Component styles
    ───────────────────────────────────────── */
 
