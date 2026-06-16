@@ -162,8 +162,8 @@ Copy from `index.html` nav section — do not rewrite from scratch.
 - [x] ~~`selected_works.html` 缺少 PingFang TC fallback~~ — 已修復
 - [x] ~~Footer copyright year 2024~~ — 已更新為 2025
 - [x] ~~OG tags 缺失~~ — 已補齊（含正確的 /takumi-portfolio/ 路徑）
-- [ ] LinkedIn 連結仍為 `href="#"` — 等待真實 URL
-- [ ] Dribbble 連結仍為 `href="#"` — 等待真實 URL 或考慮移除
+- [x] LinkedIn 連結 — 已移除（不公開）
+- [x] Dribbble 連結 — 已移除
 - [ ] `about.html` 插畫佔位符 — 等待真實圖片（放入 assets/ 資料夾）
 - [ ] 各 case study 頁面圖片仍為佔位符 — 等待真實截圖素材
 - [ ] 尚未在真實手機瀏覽器測試 RWD
