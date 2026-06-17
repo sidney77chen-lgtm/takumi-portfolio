@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background: deep green rounded square -->
+  <rect width="32" height="32" rx="7" fill="#1F3D2A"/>
+  <!-- Middle dot · as white circle, slightly below vertical center (mimics · optical position) -->
+  <circle cx="16" cy="17" r="3" fill="#ffffff"/>
+</svg>
