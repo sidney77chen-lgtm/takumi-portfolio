@@ -41,8 +41,34 @@
     return null;
   };
 
-  // ── 1) 導覽選單：未解鎖點擊時顯示密碼 modal；已解鎖直接導覽 ──
+  // ── 通用連結攔截：未解鎖點擊時顯示密碼 modal；已解鎖直接導覽 ──
+  function interceptLinks(container) {
+    for (var id in CONFIG) {
+      if (!CONFIG.hasOwnProperty(id)) continue;
+      var cfg   = CONFIG[id];
+      var links = container.querySelectorAll('a[href="' + cfg.page + '"]');
+      links.forEach(function (a) {
+        a.style.display = "";
+        // 移除舊的攔截器（避免重複綁定）
+        if (a._takumiClickHandler) {
+          a.removeEventListener("click", a._takumiClickHandler);
+        }
+        // 綁定新的攔截器（閉包捕捉 id / cfg）
+        (function (caseId, caseCfg) {
+          a._takumiClickHandler = function (e) {
+            if (isUnlocked(caseId)) return; // 已解鎖 → 正常導覽
+            e.preventDefault();
+            showNavModal(caseId, caseCfg);
+          };
+        })(id, cfg);
+        a.addEventListener("click", a._takumiClickHandler);
+      });
+    }
+  }
+
+  // ── 1) 導覽選單 + Footer：未解鎖點擊時顯示密碼 modal；已解鎖直接導覽 ──
   function syncNav() {
+    // Nav dropdown 連結（同時確保分隔線顯示）
     var navs = document.querySelectorAll("nav");
     navs.forEach(function (nav) {
       for (var id in CONFIG) {
@@ -50,30 +76,20 @@
         var cfg   = CONFIG[id];
         var links = nav.querySelectorAll('a[href="' + cfg.page + '"]');
         links.forEach(function (a) {
-          // 確保連結永遠顯示
           a.style.display = "";
           var sib = a.nextElementSibling;
           if (sib && /(^|\s)h-px(\s|$)/.test(sib.className)) {
             sib.style.display = "";
           }
-
-          // 移除舊的攔截器（避免重複綁定）
-          if (a._takumiClickHandler) {
-            a.removeEventListener("click", a._takumiClickHandler);
-          }
-
-          // 綁定新的攔截器（閉包捕捉 id / cfg）
-          (function (caseId, caseCfg) {
-            a._takumiClickHandler = function (e) {
-              if (isUnlocked(caseId)) return; // 已解鎖 → 正常導覽
-              e.preventDefault();
-              showNavModal(caseId, caseCfg);
-            };
-          })(id, cfg);
-
-          a.addEventListener("click", a._takumiClickHandler);
         });
       }
+      interceptLinks(nav);
+    });
+
+    // Footer 連結
+    var footers = document.querySelectorAll("footer");
+    footers.forEach(function (footer) {
+      interceptLinks(footer);
     });
   }
 
