@@ -15,8 +15,8 @@
 
   // ── 設定：每個受保護案例的密碼與對應頁面 ──
   var CONFIG = {
-    case01: { pwd: "takumi-clinic", page: "selected_works.html",  title: "醫療後台平台重設計", note: "此案例包含受 NDA 保護的醫療系統設計細節。" },
-    case02: { pwd: "takumi-estate", page: "brand_identity_1.html", title: "高端房仲招募平台",   note: "此案例包含客戶機密的品牌與前台設計細節。" }
+    case01: { pwd: "takumi-clinic", page: "selected_works.html",  title: "醫療後台系統建置", note: "此案例包含受 NDA 保護的醫療系統設計細節。" },
+    case02: { pwd: "takumi-estate", page: "brand_identity_1.html", title: "房仲招募前台設計",   note: "此案例包含客戶機密的品牌與前台設計細節。" }
   };
 
   var key        = function (id) { return "takumi:unlocked:" + id; };
