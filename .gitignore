@@ -3,3 +3,13 @@ __pycache__/
 .DS_Store
 *.py
 .claude/
+
+# 設計素材原稿與草稿（不入庫）
+專案1/
+src/
+docs/
+Final case .md
+case1-study-structure.md
+case2-study-structure.md
+case3-study-structure.md
+new-case3-study-structure.md

@@ -1,4 +1,4 @@
-# TAKUMI Portfolio — Persistent Project Context
+# inten·t Portfolio — Persistent Project Context
 
 > Read this file at the start of every session before touching any code.
 > All decisions must be consistent with the specs below.
@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-**Brand name:** TAKUMI（職人）  
+**Brand name:** inten·t  
 **Owner:** Sidney Chen — Senior UI/UX Designer  
 **Contact:** sidney77chen@gmail.com  
 **Goal:** Live portfolio targeting Design Directors / HR Recruiters at established orgs (50+ employees)  
@@ -132,7 +132,7 @@ All padding/margin must be multiples of 8px. No arbitrary values.
 ## Navigation (shared across all pages)
 
 - Fixed top, `backdrop-blur-xl`, `bg-surface/80`
-- Logo: TAKUMI (left), `font-headline-sm tracking-widest text-primary`
+- Logo: inten·t (left), `logo-intent text-primary`
 - Desktop links: 精選作品 (dropdown) / 設計方法論 / 關於我 / 聯絡諮詢 (CTA button)
 - Works dropdown: 3 items → selected_works.html / brand_identity_1.html / brand_identity_2.html
 - Mobile: hamburger → full-width drawer menu
@@ -247,6 +247,6 @@ Output: updated about.html only. No explanation.
 
 ## Design Philosophy (reference when writing copy or making decisions)
 
-The TAKUMI aesthetic evokes a high-end architectural studio or curated physical archive.  
+The inten·t aesthetic evokes a high-end architectural studio or curated physical archive.  
 Every decision should ask: *does this feel like it was made slowly, with full intention?*  
 Whitespace is a material, not an absence. Typography carries the weight that decoration must not.
